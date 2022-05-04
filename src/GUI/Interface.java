@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI;  // go to line 7481 admin courses list reload urgent
 
 import Classes.Activity;
 import Classes.Course;
@@ -4975,7 +4975,7 @@ public class Interface extends javax.swing.JFrame {
         );
 
         adminaddsalaryinstructorLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminaddsalaryinstructorLabel.setText("Acadmic Year");
+        adminaddsalaryinstructorLabel.setText("Salary");
 
         adminaddsalaryinstructorText.setBackground(new java.awt.Color(0, 0, 0, 1));
         adminaddsalaryinstructorText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -7478,12 +7478,22 @@ public class Interface extends javax.swing.JFrame {
         for(int i = 0; i<10 && list[i]!=null ; i++)  // why i<5 not just list[i]!=null
         {            
          //System.out.println(list[i].courseID+list[i].name+ list[i].description+" "+Staff.getStaff(list[i].courseID)[0].FirstName+" "+Staff.getStaff(list[i].courseID)[0].LastName+" ");
+            if(Staff.getStaff(list[i].courseID)[0]==null)
+            {
+                AddRowToJTable(new Object[]{
+                                           list[i].courseID,list[i].name,"No instructor",list[i].description
+                                           },admincourseslistTable);
+                continue;
+            }
+       
             AddRowToJTable(new Object[]{
                                            list[i].courseID,list[i].name,Staff.getStaff(list[i].courseID)[0].FirstName+" "+Staff.getStaff(list[i].courseID)[0].LastName,list[i].description
                                            },admincourseslistTable);
         }
         }
-        catch(NullPointerException e){}
+        catch(NullPointerException e){
+            
+        }
     }
     private void profileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileButtonMousePressed
         studentprofilenameText.setText(student.FirstName+" "+student.LastName);
