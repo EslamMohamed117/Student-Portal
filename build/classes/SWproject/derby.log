@@ -1,7 +1,7 @@
-Fri Apr 29 16:52:18 EET 2022 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Wed May 04 20:53:49 EET 2022 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Fri Apr 29 16:52:22 EET 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0180-75ce-dec7-ffffeabb1c54 
+Wed May 04 20:53:49 EET 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0180-906b-ca78-ffffeabb1c54 
 on database directory C:\Users\Eslam M.Ashour\Documents\NetBeansProjects\Student Portal\src\SWproject\SWproject with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
 Loaded from file:/C:/Users/Eslam%20M.Ashour/Documents/NetBeansProjects/db-derby-10.14.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -12,9 +12,3 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\Eslam M.Ashour\Documents\NetBeansProjects\Student Portal\src\SWproject
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Fri Apr 29 17:04:26 EET 2022: Shutting down Derby engine
-----------------------------------------------------------------
-Fri Apr 29 17:04:26 EET 2022:
-Shutting down instance a816c00e-0180-75ce-dec7-ffffeabb1c54 on database directory C:\Users\Eslam M.Ashour\Documents\NetBeansProjects\Student Portal\src\SWproject\SWproject with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
-----------------------------------------------------------------
