@@ -5,18 +5,15 @@
  */
 package Classes;
 
-import java.sql.Date;
-
 /**
  *
  * @author hp
  */
 public class Activity {
-    public String activityID, name, type, link, instructorID, courseID;
-    Date date;
+    public String activityID, name, type, link, instructorID, date, courseID;
     private final static DBInterface DB = new DBInterface();
     
-    public Activity(String name, String type, String link, String instructorID, Date date, String courseID) {
+    public Activity(String name, String type, String link, String instructorID, String date, String courseID) {
         this.name = name;
         this.type = type;
         this.link = link;
@@ -24,7 +21,7 @@ public class Activity {
         this.date = date;
         this.courseID=courseID;
     }
-        public Activity(String ActivityID,String name, String type, String link, String instructorID, Date date, String courseID) {
+        public Activity(String ActivityID,String name, String type, String link, String instructorID, String date, String courseID) {
         this.activityID = ActivityID;
         this.name = name;
         this.type = type;

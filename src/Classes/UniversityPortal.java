@@ -14,10 +14,10 @@ public class UniversityPortal {
     
     public static void main(String[] args){
         DBInterface db=new DBInterface();
-        String s =Staff.getInstructors("13")[0].firstName+" "+Staff.getInstructors("13")[0].lastName;
+        String s =Staff.getStaff("13")[0].FirstName+" "+Staff.getStaff("13")[0].LastName;
         System.out.println(s);
 //Student student = new Student("000");
-        //Course[] list = Course.getCourses(student.userID);
+        //Course[] list = Course.getCourses(student.UserID);
         //System.out.println(list[0].name);
         
     }
