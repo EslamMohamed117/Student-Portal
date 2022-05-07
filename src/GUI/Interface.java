@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI;  // go to line 7481 admin courses list reload urgent
 
 import Classes.Activity;
 import Classes.Course;
@@ -605,7 +605,6 @@ public class Interface extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(1024, 768));
         setMinimumSize(new java.awt.Dimension(1024, 768));
         setUndecorated(true);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -1748,7 +1747,7 @@ public class Interface extends javax.swing.JFrame {
         studentmenuPanelLayout.setVerticalGroup(
             studentmenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
 
         getContentPane().add(studentmenuPanel, "card3");
@@ -2286,16 +2285,16 @@ public class Interface extends javax.swing.JFrame {
         admineditprofileButtonLayout.setHorizontalGroup(
             admineditprofileButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(admineditprofileButtonLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addComponent(admineditprofileText)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         admineditprofileButtonLayout.setVerticalGroup(
             admineditprofileButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, admineditprofileButtonLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(admineditprofileText)
-                .addContainerGap())
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         adminsaveprofileButton.setBackground(new java.awt.Color(54, 33, 89));
@@ -2317,16 +2316,16 @@ public class Interface extends javax.swing.JFrame {
         adminsaveprofileButtonLayout.setHorizontalGroup(
             adminsaveprofileButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminsaveprofileButtonLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addComponent(adminsaveprofileButtonText)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         adminsaveprofileButtonLayout.setVerticalGroup(
             adminsaveprofileButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminsaveprofileButtonLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(adminsaveprofileButtonText)
-                .addContainerGap())
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         admindiscardprofileButton.setBackground(new java.awt.Color(54, 33, 89));
@@ -2348,16 +2347,16 @@ public class Interface extends javax.swing.JFrame {
         admindiscardprofileButtonLayout.setHorizontalGroup(
             admindiscardprofileButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(admindiscardprofileButtonLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(57, 57, 57)
                 .addComponent(admindiscardprofileButtonText)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         admindiscardprofileButtonLayout.setVerticalGroup(
             admindiscardprofileButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, admindiscardprofileButtonLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(admindiscardprofileButtonText)
-                .addContainerGap())
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout profileDataPanel1Layout = new javax.swing.GroupLayout(profileDataPanel1);
@@ -2370,19 +2369,23 @@ public class Interface extends javax.swing.JFrame {
                         .addGap(54, 54, 54)
                         .addComponent(jLabel2))
                     .addGroup(profileDataPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(basicinfoStart1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(profileDataPanel1Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addGroup(profileDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(admineditprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(admindiscardprofileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminsaveprofileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminprofilenamePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminprofileidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminprofilesalaryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(265, Short.MAX_VALUE))
+                            .addComponent(adminprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(profileDataPanel1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(profileDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(profileDataPanel1Layout.createSequentialGroup()
+                                .addComponent(admineditprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
+                                .addGroup(profileDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(admindiscardprofileButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(adminsaveprofileButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(basicinfoStart1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profileDataPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(adminprofileText)
@@ -2405,13 +2408,14 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(adminprofilesalaryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminprofilepasswordPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addComponent(admineditprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(adminsaveprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(admindiscardprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addGroup(profileDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profileDataPanel1Layout.createSequentialGroup()
+                        .addComponent(adminsaveprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(admindiscardprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(admineditprofileButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56))
         );
 
         javax.swing.GroupLayout adminprofilePanelLayout = new javax.swing.GroupLayout(adminprofilePanel);
@@ -4294,9 +4298,9 @@ public class Interface extends javax.swing.JFrame {
         adminAddStudentButtonLayout.setHorizontalGroup(
             adminAddStudentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminAddStudentButtonLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(30, 30, 30)
                 .addComponent(adminAddStudentText1)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
         adminAddStudentButtonLayout.setVerticalGroup(
             adminAddStudentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4324,9 +4328,9 @@ public class Interface extends javax.swing.JFrame {
         adminAddInstructorButtonLayout.setHorizontalGroup(
             adminAddInstructorButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminAddInstructorButtonLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(20, 20, 20)
                 .addComponent(adminAddInstructorButtonText1)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         adminAddInstructorButtonLayout.setVerticalGroup(
             adminAddInstructorButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4354,9 +4358,9 @@ public class Interface extends javax.swing.JFrame {
         adminAddCourseButtonLayout.setHorizontalGroup(
             adminAddCourseButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminAddCourseButtonLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(30, 30, 30)
                 .addComponent(adminAddCourseButtonText1)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
         adminAddCourseButtonLayout.setVerticalGroup(
             adminAddCourseButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4387,9 +4391,9 @@ public class Interface extends javax.swing.JFrame {
         adminstudentmodifyButtonLayout.setHorizontalGroup(
             adminstudentmodifyButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminstudentmodifyButtonLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(30, 30, 30)
                 .addComponent(adminstudentmodifytext)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
         adminstudentmodifyButtonLayout.setVerticalGroup(
             adminstudentmodifyButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4417,9 +4421,9 @@ public class Interface extends javax.swing.JFrame {
         admininstructormodifyButtonLayout.setHorizontalGroup(
             admininstructormodifyButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(admininstructormodifyButtonLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(adminmodifyInstructorButtonText)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         admininstructormodifyButtonLayout.setVerticalGroup(
             admininstructormodifyButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4447,9 +4451,9 @@ public class Interface extends javax.swing.JFrame {
         adminmodifyCourseButtonLayout.setHorizontalGroup(
             adminmodifyCourseButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminmodifyCourseButtonLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(30, 30, 30)
                 .addComponent(adminmodifyCourseButtonText)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
         adminmodifyCourseButtonLayout.setVerticalGroup(
             adminmodifyCourseButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4480,9 +4484,9 @@ public class Interface extends javax.swing.JFrame {
         admindeleteButtonLayout.setHorizontalGroup(
             admindeleteButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(admindeleteButtonLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(admindeleteButtonText)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         admindeleteButtonLayout.setVerticalGroup(
             admindeleteButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4510,9 +4514,9 @@ public class Interface extends javax.swing.JFrame {
         adminenrollstudentButtonLayout.setHorizontalGroup(
             adminenrollstudentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminenrollstudentButtonLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addComponent(adminenrollstudentText)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         adminenrollstudentButtonLayout.setVerticalGroup(
             adminenrollstudentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4527,68 +4531,65 @@ public class Interface extends javax.swing.JFrame {
         adminaddmodifydeletePanelLayout.setHorizontalGroup(
             adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(adminstudentmodifyButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminAddStudentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
-                        .addGap(351, 351, 351)
-                        .addComponent(admindeleteText))
-                    .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(adminstudentmodifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
-                                .addComponent(adminAddStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(adminAddInstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(adminAddCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(adminenrollstudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(28, 28, 28))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminaddmodifydeletePanelLayout.createSequentialGroup()
-                .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(admindeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
-                            .addGap(381, 381, 381)
-                            .addComponent(adminaddText))
-                        .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
-                            .addGap(353, 353, 353)
-                            .addComponent(adminmodifyText)))
-                    .addComponent(admininstructormodifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(adminmodifyCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminaddmodifydeletePanelLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(adminaddText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(winControlPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(winControlPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
+                        .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
+                                    .addComponent(admininstructormodifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(22, 22, 22)
+                                    .addComponent(adminmodifyCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(admindeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
+                                    .addComponent(adminAddInstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(22, 22, 22)
+                                    .addComponent(adminAddCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(adminenrollstudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
+                                .addComponent(admindeleteText)
+                                .addGap(160, 160, 160)))
+                        .addGap(152, 156, Short.MAX_VALUE))
+                    .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
+                        .addComponent(adminmodifyText)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         adminaddmodifydeletePanelLayout.setVerticalGroup(
             adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
                 .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(winControlPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(adminaddmodifydeletePanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(adminaddText))
-                    .addComponent(winControlPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(adminAddStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminAddInstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminAddCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminenrollstudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
+                        .addGap(50, 50, 50)
+                        .addComponent(adminaddText)
+                        .addGap(18, 18, 18)
+                        .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(adminAddInstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminAddStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminAddCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(31, 31, 31)
+                .addComponent(adminenrollstudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addComponent(adminmodifyText)
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
                 .addGroup(adminaddmodifydeletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(adminstudentmodifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminmodifyCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(admininstructormodifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(68, 68, 68)
+                    .addComponent(admininstructormodifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminmodifyCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
                 .addComponent(admindeleteText)
-                .addGap(74, 74, 74)
+                .addGap(18, 18, 18)
                 .addComponent(admindeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         adminPanel.add(adminaddmodifydeletePanel, "card15");
@@ -4975,7 +4976,7 @@ public class Interface extends javax.swing.JFrame {
         );
 
         adminaddsalaryinstructorLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminaddsalaryinstructorLabel.setText("Acadmic Year");
+        adminaddsalaryinstructorLabel.setText("Salary");
 
         adminaddsalaryinstructorText.setBackground(new java.awt.Color(0, 0, 0, 1));
         adminaddsalaryinstructorText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -5574,33 +5575,33 @@ public class Interface extends javax.swing.JFrame {
         listsDataPanelLayout.setHorizontalGroup(
             listsDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listsDataPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap(59, Short.MAX_VALUE)
                 .addComponent(adminListsStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
+                .addGap(40, 40, 40)
                 .addComponent(adminListsInstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addGap(40, 40, 40)
                 .addComponent(adminListsCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(59, Short.MAX_VALUE))
             .addGroup(listsDataPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(listsText)
-                .addGap(288, 288, 288)
                 .addComponent(winControlPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(listsDataPanelLayout.createSequentialGroup()
+                .addGap(337, 337, 337)
+                .addComponent(listsText)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         listsDataPanelLayout.setVerticalGroup(
             listsDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listsDataPanelLayout.createSequentialGroup()
-                .addGroup(listsDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(listsDataPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(listsText))
-                    .addComponent(winControlPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(158, 158, 158)
+                .addComponent(winControlPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(listsText)
+                .addGap(182, 182, 182)
                 .addGroup(listsDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(adminListsStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminListsInstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminListsCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(463, Short.MAX_VALUE))
+                .addContainerGap(415, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout adminListsPanelLayout = new javax.swing.GroupLayout(adminListsPanel);
@@ -5742,47 +5743,44 @@ public class Interface extends javax.swing.JFrame {
         addStudentDataPanel1.setLayout(addStudentDataPanel1Layout);
         addStudentDataPanel1Layout.setHorizontalGroup(
             addStudentDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addStudentDataPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(addStudentText2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addStudentDataPanel1Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(addStudentDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminenrollcourseidstudentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminenrollstudentidstudentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addStudentDataPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(adminenrollsavestudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(195, 195, 195))
+            .addGroup(addStudentDataPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addGroup(addStudentDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addStudentDataPanel1Layout.createSequentialGroup()
-                        .addGroup(addStudentDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addStudentDataPanel1Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(jLabel5))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addStudentDataPanel1Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(basicinfoStart4, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addStudentDataPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(addStudentDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(addStudentDataPanel1Layout.createSequentialGroup()
-                                .addComponent(adminenrollsavestudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(adminenrollcourseidstudentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminenrollstudentidstudentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(195, 195, 195))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5))
+                    .addComponent(basicinfoStart4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addStudentDataPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addStudentText2)
+                .addGap(126, 126, 126))
         );
         addStudentDataPanel1Layout.setVerticalGroup(
             addStudentDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addStudentDataPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(24, 24, 24)
                 .addComponent(addStudentText2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel5)
                 .addGap(12, 12, 12)
                 .addComponent(basicinfoStart4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(126, 126, 126)
                 .addComponent(adminenrollcourseidstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addGap(50, 50, 50)
                 .addComponent(adminenrollstudentidstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(330, 330, 330)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                 .addComponent(adminenrollsavestudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(82, 82, 82))
         );
 
         javax.swing.GroupLayout adminenrollstudentPanelLayout = new javax.swing.GroupLayout(adminenrollstudentPanel);
@@ -5811,12 +5809,12 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(adminmenuPanelLayout.createSequentialGroup()
                 .addComponent(adminsidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(adminPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 767, Short.MAX_VALUE))
+                .addComponent(adminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE))
         );
         adminmenuPanelLayout.setVerticalGroup(
             adminmenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(adminsidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
-            .addComponent(adminPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(adminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
 
         getContentPane().add(adminmenuPanel, "card3");
@@ -6540,16 +6538,16 @@ public class Interface extends javax.swing.JFrame {
         instructorprofileeditButtonLayout.setHorizontalGroup(
             instructorprofileeditButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(instructorprofileeditButtonLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addComponent(instructorprofileeditTextButton)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         instructorprofileeditButtonLayout.setVerticalGroup(
             instructorprofileeditButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instructorprofileeditButtonLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(instructorprofileeditTextButton)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
 
         instructorprofilesaveButton.setBackground(new java.awt.Color(54, 33, 89));
@@ -6571,16 +6569,16 @@ public class Interface extends javax.swing.JFrame {
         instructorprofilesaveButtonLayout.setHorizontalGroup(
             instructorprofilesaveButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(instructorprofilesaveButtonLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(74, 74, 74)
                 .addComponent(instructorprofilesaveTextButton)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         instructorprofilesaveButtonLayout.setVerticalGroup(
             instructorprofilesaveButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instructorprofilesaveButtonLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(instructorprofilesaveTextButton)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
 
         instructorprofilediscardButton.setBackground(new java.awt.Color(54, 33, 89));
@@ -6602,49 +6600,54 @@ public class Interface extends javax.swing.JFrame {
         instructorprofilediscardButtonLayout.setHorizontalGroup(
             instructorprofilediscardButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(instructorprofilediscardButtonLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(59, 59, 59)
                 .addComponent(instructorprofilediscardTextButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         instructorprofilediscardButtonLayout.setVerticalGroup(
             instructorprofilediscardButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instructorprofilediscardButtonLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(instructorprofilediscardTextButton)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout profileDataPanel2Layout = new javax.swing.GroupLayout(profileDataPanel2);
         profileDataPanel2.setLayout(profileDataPanel2Layout);
         profileDataPanel2Layout.setHorizontalGroup(
             profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(profileDataPanel2Layout.createSequentialGroup()
+                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(profileDataPanel2Layout.createSequentialGroup()
+                        .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addComponent(instructorprofileidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(instructorprofilenamePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(instructorprofilesalaryPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(instructorprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(instructorprofileeditButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(basicinfoStart2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 252, Short.MAX_VALUE))
+                    .addGroup(profileDataPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(instructorprofilediscardButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(instructorprofilesaveButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, 0))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profileDataPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(adminprofileText1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(profileDataPanel2Layout.createSequentialGroup()
-                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(instructorprofileidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(instructorprofilenamePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(instructorprofilesalaryPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(instructorprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(instructorprofileeditButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(instructorprofilediscardButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(instructorprofilesaveButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(basicinfoStart2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addGap(233, 233, 233))
         );
         profileDataPanel2Layout.setVerticalGroup(
             profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6663,13 +6666,14 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(instructorprofilesalaryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(instructorprofilepasswordPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addComponent(instructorprofileeditButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(instructorprofilesaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(instructorprofilediscardButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(profileDataPanel2Layout.createSequentialGroup()
+                        .addComponent(instructorprofilesaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(instructorprofilediscardButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(instructorprofileeditButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56))
         );
 
         javax.swing.GroupLayout instructorprofilePanelLayout = new javax.swing.GroupLayout(instructorprofilePanel);
@@ -6678,14 +6682,14 @@ public class Interface extends javax.swing.JFrame {
             instructorprofilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instructorprofilePanelLayout.createSequentialGroup()
                 .addComponent(profileDataPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(winControlPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         instructorprofilePanelLayout.setVerticalGroup(
             instructorprofilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(instructorprofilePanelLayout.createSequentialGroup()
                 .addComponent(winControlPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(656, 732, Short.MAX_VALUE))
             .addComponent(profileDataPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -7359,7 +7363,7 @@ public class Interface extends javax.swing.JFrame {
         try
         {
             Activity[] list = Activity.getActivitiesUsingCourseID(staff.courseID);
-            for(int i = 0; i<10&&list[i] != null ; i++) 
+            for(int i = 0; i<list.length &&list[i] != null ; i++) 
             {   
                 Staff instructor = Staff.getInstructorName(list[i].instructorID);
                 AddRowToJTable(new Object[]{
@@ -7375,8 +7379,8 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try
         {
-            Activity[] list = Activity.getActivities(student.userID);
-            for(int i = 0; i<5&&list[i] != null ; i++) 
+            Activity[] list = Activity.getActivities(student.UserID);
+            for(int i = 0; i<list.length &&list[i] != null ; i++) 
             {   
                 Staff instructor = Staff.getInstructorName(list[i].instructorID);
                 Course cors = new Course(list[i].courseID);
@@ -7394,7 +7398,7 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try{
         History[] list = History.getAdminHistory();
-        for(int i = 0; i<5 && list[i] != null ; i++) 
+        for(int i = 0; i<list.length && list[i] != null ; i++) 
             AddRowToJTable(new Object[]{
                 list[i].HistoryID,list[i].adminID,list[i].Date,list[i].description
                     },adminactivityTable);
@@ -7475,15 +7479,25 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try{
         Course[] list = Course.getCourses();
-        for(int i = 0; i<10 && list[i]!=null ; i++)  // why i<5 not just list[i]!=null
+        for(int i = 0; i<list.length && list[i]!=null ; i++)  // why i<5 not just list[i]!=null
         {            
-         //System.out.println(list[i].courseID+list[i].name+ list[i].description+" "+Staff.getInstructors(list[i].courseID)[0].firstName+" "+Staff.getInstructors(list[i].courseID)[0].lastName+" ");
+         //System.out.println(list[i].courseID+list[i].name+ list[i].description+" "+Staff.getStaff(list[i].courseID)[0].FirstName+" "+Staff.getStaff(list[i].courseID)[0].LastName+" ");
+            if(Staff.getStaff(list[i].courseID)[0]==null)
+            {
+                AddRowToJTable(new Object[]{
+                                           list[i].courseID,list[i].name,"No instructor",list[i].description
+                                           },admincourseslistTable);
+                continue;
+            }
+       
             AddRowToJTable(new Object[]{
                                            list[i].courseID,list[i].name,Staff.getInstructors(list[i].courseID)[0].firstName+" "+Staff.getInstructors(list[i].courseID)[0].lastName,list[i].description
                                            },admincourseslistTable);
         }
         }
-        catch(NullPointerException e){}
+        catch(NullPointerException e){
+            
+        }
     }
     private void profileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileButtonMousePressed
         studentprofilenameText.setText(student.firstName+" "+student.lastName);
@@ -7865,21 +7879,6 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_instructoraddactivitytextTextActionPerformed
 
-    private void adminAddStudentButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminAddStudentButtonMousePressed
-        adminaddmodifydeletePanel.setVisible(false);
-        adminAddStudentPanel.setVisible(true);
-    }//GEN-LAST:event_adminAddStudentButtonMousePressed
-
-    private void adminAddInstructorButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminAddInstructorButtonMousePressed
-        adminaddmodifydeletePanel.setVisible(false);
-        adminAddInstructorPanel.setVisible(true);
-    }//GEN-LAST:event_adminAddInstructorButtonMousePressed
-
-    private void adminAddCourseButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminAddCourseButtonMousePressed
-        adminaddmodifydeletePanel.setVisible(false);
-        adminAddCoursePanel.setVisible(true);
-    }//GEN-LAST:event_adminAddCourseButtonMousePressed
-
     private void exitButton12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton12MousePressed
         System.exit(0);
     }//GEN-LAST:event_exitButton12MousePressed
@@ -8056,26 +8055,6 @@ public class Interface extends javax.swing.JFrame {
         SideButton(adminprofileButton,adminprofilePanel,adminprofileSideButton);
     }//GEN-LAST:event_adminprofileButtonMousePressed
 
-    private void adminstudentmodifyButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminstudentmodifyButtonMousePressed
-        adminaddmodifydeletePanel.setVisible(false);
-        adminModifyStudentPanel.setVisible(true);
-    }//GEN-LAST:event_adminstudentmodifyButtonMousePressed
-
-    private void admininstructormodifyButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admininstructormodifyButtonMousePressed
-        adminaddmodifydeletePanel.setVisible(false);
-        adminModifyInstructorPanel.setVisible(true);
-    }//GEN-LAST:event_admininstructormodifyButtonMousePressed
-
-    private void adminmodifyCourseButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminmodifyCourseButtonMousePressed
-        adminaddmodifydeletePanel.setVisible(false);
-        adminModifyCoursePanel.setVisible(true);
-    }//GEN-LAST:event_adminmodifyCourseButtonMousePressed
-
-    private void admindeleteButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admindeleteButtonMousePressed
-        adminaddmodifydeletePanel.setVisible(false);
-        adminDeletePanel.setVisible(true);
-    }//GEN-LAST:event_admindeleteButtonMousePressed
-
     private void adminListsStudentButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminListsStudentButtonMousePressed
         reloadAdminStudentsTable();
         adminListsPanel.setVisible(false);
@@ -8228,11 +8207,6 @@ public class Interface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_adminmodifyselectcourseButtonMousePressed
 
-    private void adminenrollstudentButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminenrollstudentButtonMousePressed
-        adminaddmodifydeletePanel.setVisible(false);
-        adminenrollstudentPanel.setVisible(true);
-    }//GEN-LAST:event_adminenrollstudentButtonMousePressed
-
     private void exitButton21MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton21MousePressed
         System.exit(0);
     }//GEN-LAST:event_exitButton21MousePressed
@@ -8311,10 +8285,6 @@ public class Interface extends javax.swing.JFrame {
         instructorgrademodifygradeText.setText(instructorcoursestudentslistTable.getValueAt(instructorcoursestudentslistTable.getSelectedRow(), 5).toString());
     }//GEN-LAST:event_instructorcoursestudentslistTableMousePressed
 
-    private void exitButton23MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton23MousePressed
-        System.exit(0);
-    }//GEN-LAST:event_exitButton23MousePressed
-
     private void exitButton24MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton24MousePressed
         System.exit(0);
     }//GEN-LAST:event_exitButton24MousePressed
@@ -8322,6 +8292,50 @@ public class Interface extends javax.swing.JFrame {
     private void exitButton25MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton25MousePressed
         System.exit(0);
     }//GEN-LAST:event_exitButton25MousePressed
+
+    private void adminenrollstudentButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminenrollstudentButtonMousePressed
+        adminaddmodifydeletePanel.setVisible(false);
+        adminenrollstudentPanel.setVisible(true);
+    }//GEN-LAST:event_adminenrollstudentButtonMousePressed
+
+    private void admindeleteButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admindeleteButtonMousePressed
+        adminaddmodifydeletePanel.setVisible(false);
+        adminDeletePanel.setVisible(true);
+    }//GEN-LAST:event_admindeleteButtonMousePressed
+
+    private void adminmodifyCourseButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminmodifyCourseButtonMousePressed
+        adminaddmodifydeletePanel.setVisible(false);
+        adminModifyCoursePanel.setVisible(true);
+    }//GEN-LAST:event_adminmodifyCourseButtonMousePressed
+
+    private void admininstructormodifyButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admininstructormodifyButtonMousePressed
+        adminaddmodifydeletePanel.setVisible(false);
+        adminModifyInstructorPanel.setVisible(true);
+    }//GEN-LAST:event_admininstructormodifyButtonMousePressed
+
+    private void adminstudentmodifyButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminstudentmodifyButtonMousePressed
+        adminaddmodifydeletePanel.setVisible(false);
+        adminModifyStudentPanel.setVisible(true);
+    }//GEN-LAST:event_adminstudentmodifyButtonMousePressed
+
+    private void adminAddCourseButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminAddCourseButtonMousePressed
+        adminaddmodifydeletePanel.setVisible(false);
+        adminAddCoursePanel.setVisible(true);
+    }//GEN-LAST:event_adminAddCourseButtonMousePressed
+
+    private void adminAddInstructorButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminAddInstructorButtonMousePressed
+        adminaddmodifydeletePanel.setVisible(false);
+        adminAddInstructorPanel.setVisible(true);
+    }//GEN-LAST:event_adminAddInstructorButtonMousePressed
+
+    private void adminAddStudentButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminAddStudentButtonMousePressed
+        adminaddmodifydeletePanel.setVisible(false);
+        adminAddStudentPanel.setVisible(true);
+    }//GEN-LAST:event_adminAddStudentButtonMousePressed
+
+    private void exitButton23MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton23MousePressed
+        System.exit(0);
+    }//GEN-LAST:event_exitButton23MousePressed
     private void Signout()
     {
         dispose();
