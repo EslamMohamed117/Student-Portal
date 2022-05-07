@@ -1,11 +1,16 @@
 package Classes;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author Eslam M.Ashour
  */
 public class History {
-    public String HistoryID, adminID, Date, description;
+    public String adminID, description;
+    public Date modificationdate;
     private static final DBInterface DB = new DBInterface();
     //public static final String Activity_ADDED = "Student Has Been Added to the data base";
     public static final String STUDENT_ADDED      = "a  Student    has Been added to the database";
@@ -24,8 +29,7 @@ public class History {
     public static final String COURSE_DELETED     = "a  course     Has Been deleted to the database";
     
 
-    public History(String HistoryID, String AdminID) {
-        this.HistoryID   = HistoryID;
+    public History(String AdminID) {
         this.adminID     = AdminID;
         this.description = "Empty..";
     }
@@ -33,8 +37,7 @@ public class History {
     {
 
     }
-    public History(String HistoryID, String AdminID, String Description) {
-        this.HistoryID   = HistoryID;
+    public History(String AdminID, String Description) {
         this.adminID     = AdminID;
         this.description = Description;
     }
@@ -45,10 +48,15 @@ public class History {
          * @return 
          */
     public static boolean historyAdd(String adminID ,String description){
-        return DB.newAdminActivity(adminID, description);
+        return DB.addAdminActivity(adminID, description);
     }
     
     public static History[] getAdminHistory(){
         return DB.getAdminHistory();
+    }
+    public String getDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
+        String strDate = dateFormat.format(this.modificationdate);
+        return strDate;
     }
 }
