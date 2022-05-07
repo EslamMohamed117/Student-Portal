@@ -5,51 +5,53 @@
  */
 package Classes;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+
 
 /**
  *
  * @author raya
  */
 public class User {
-    public   String age, phone, UserID, FirstName, LastName, birthDate, gender, password;
+    public   String age, phone[], userID, firstName, lastName, gender, password;
+    public Date birthDate;
     protected static final DBInterface DB = new DBInterface();
     
     public User() {
-        UserID="-1";
+        userID=null;
     }
 
     public User(String ID) {
-        this.UserID = ID;
+        this.userID = ID;
     }
 
-    public User(User member){
-        this.UserID    = member.UserID;
-        this.password  = member.password;
-        this.FirstName = member.FirstName;
-        this.LastName  = member.LastName;
-        this.age       = member.age;
-        this.phone     = member.phone;
-        this.birthDate = member.birthDate;
-        this.gender    = member.gender;
+    public User(String age, String[] phone, String userID, String firstName, String lastName, String gender, String password, Date birthDate) {
+        this.age = age;
+        this.phone = phone;
+        this.userID = userID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.password = password;
+        this.birthDate = birthDate;
     }
     
-    public User(String age, String phone, String ID, String FirstName, String LastName, String birthDate, String gender) {    
-        this.UserID    = ID;
-        this.FirstName = FirstName;
-        this.LastName  = LastName;
-        this.age       = age;
-        this.phone     = phone;
-        this.birthDate = birthDate;
-        this.gender    = gender;
+    public User(User u) {
+        this.age = u.age;
+        this.phone = u.phone;
+        this.userID = u.userID;
+        this.firstName = u.firstName;
+        this.lastName = u.lastName;
+        this.gender = u.gender;
+        this.password = u.password;
+        this.birthDate = u.birthDate;
     }
-        public User(String age, String phone, String FirstName, String LastName, String birthDate, String gender) {    
-        this.FirstName = FirstName;
-        this.LastName  = LastName;
-        this.age       = age;
-        this.phone     = phone;
-        this.birthDate = birthDate;
-        this.gender    = gender;
-    }
+    
+    
+    
     
     public static boolean login(String userID,String password) {
         return DB.checkUserCredentials(userID, password);
@@ -57,5 +59,19 @@ public class User {
     
     public static boolean deleteUser(String userID){
         return DB.deleteUser(userID);
+    }
+    
+    public void setPhone(String[] phones) {
+        this.phone=phones;
+    }
+    
+    public String getDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
+        String strDate = dateFormat.format(this.birthDate);
+        return strDate;
+    }
+    
+    public void calc_age(){
+        this.age = String.valueOf( LocalDate.now().getYear() - birthDate.getYear() );
     }
 }

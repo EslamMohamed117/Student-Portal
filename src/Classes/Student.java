@@ -5,6 +5,8 @@
  */
 package Classes;
 
+import java.sql.Date;
+
 /**
  *
  * @author raya
@@ -31,28 +33,15 @@ public class Student extends User {
         this.academicYear = academicYear;
         this.classNo = classNo;
     }
-    /**
-     * 
-     * @param academicYear
-     * @param classNo
-     * @param age
-     * @param phone
-     * @param UserID
-     * @param FirstName
-     * @param LastName
-     * @param birthDate
-     * @param gender
-     */
-    public Student(String academicYear, String classNo, String age, String phone, String UserID, String FirstName, String LastName, String birthDate, String gender) {
-        super(age, phone, UserID, FirstName, LastName, birthDate, gender);
+    
+    Student(String academicYear, String classNo, String UserID, String FirstName, String LastName, Date birthDate, String gender) {
         this.academicYear = academicYear;
         this.classNo = classNo;
-    }
-        public Student(String academicYear, String classNo, String age, String phone, String UserID, String FirstName, String LastName, String birthDate, String gender, String password) {
-        super(age, phone, UserID, FirstName, LastName, birthDate, gender);
-        this.academicYear = academicYear;
-        this.classNo = classNo;
-        this.password = password;
+        this.userID = UserID;
+        this.firstName = FirstName;
+        this.lastName = LastName;
+        this.gender = gender;
+        this.birthDate = birthDate;
     }
     
     public boolean fillstudentInfo(){
