@@ -7379,7 +7379,7 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try
         {
-            Activity[] list = Activity.getActivities(student.UserID);
+            Activity[] list = Activity.getActivities(student.userID);
             for(int i = 0; i<list.length &&list[i] != null ; i++) 
             {   
                 Staff instructor = Staff.getInstructorName(list[i].instructorID);
