@@ -130,13 +130,13 @@ public class DBInterface {
     private void updateInTable(int tableType){
         switch (tableType) {
             case ACTIVITY_TABLE:
-                sql = "UPDATE Activity SET Name = ?, Type = ?, Link = ?,  \"Date\"  = ? WHERE ActivityID = ? ";
+                sql = "UPDATE Activity SET Name = ?, Type = ?, Link = ?,  activity_date  = ? WHERE ActivityID = ? ";
                 break;
             case ADMIN_TABLE:
                 sql = "UPDATE Admin SET  WHERE AdminID = ?";
                 break;
             case ADMIN_HISTORY_TABLE:
-                sql = "UPDATE Admin_History SET Description = ?, \"Date\" = ? WHERE AdminID = ?";
+                sql = "UPDATE Admin_History SET Description = ?, activity_date = ? WHERE AdminID = ?";
                 break;
             case COURSE_TABLE:
                 sql = "UPDATE Course SET Name = ?, Description = ? WHERE CourseID = ?";
@@ -785,7 +785,7 @@ public class DBInterface {
                     rs.getString("Type"),
                     rs.getString("Link"),
                     String.valueOf(rs.getInt("INSTRUCTORID")),
-                    rs.getDate("\"DATE\""),//Review later
+                    rs.getDate("activity_date"),
                     rs.getString("CourseID"));
             }
         }
@@ -818,7 +818,7 @@ public class DBInterface {
                         rs.getString("Type"),
                         rs.getString("Link"),
                         String.valueOf(rs.getInt("INSTRUCTORID")),
-                        rs.getDate("\"DATE\""),//Review later
+                        rs.getDate("activity_date"),//Review later
                         rs.getString("CourseID"));
                 }
             }
@@ -845,7 +845,7 @@ public class DBInterface {
                     rs.getString("Type"),
                     rs.getString("Link"),
                     String.valueOf(rs.getInt("INSTRUCTORID")),
-                    rs.getDate("\"DATE\""),//Review later
+                    rs.getDate("activity_date"),//Review later
                     rs.getString("CourseID"));
             
             }
@@ -1223,7 +1223,7 @@ public class DBInterface {
                 h[i] = new History();
                 h[i].description = rs.getString("DESCRIPTION");
                 h[i].adminID     = String.valueOf(rs.getInt("ADMINID"));
-                h[i].modificationdate        = rs.getDate("\"Date\"");
+                h[i].modificationdate        = rs.getDate("activity_date");
             }
         } catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
