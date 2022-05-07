@@ -7361,9 +7361,9 @@ public class Interface extends javax.swing.JFrame {
             Activity[] list = Activity.getActivitiesUsingCourseID(staff.courseID);
             for(int i = 0; i<10&&list[i] != null ; i++) 
             {   
-                Staff instructor = Staff.getStaffName(list[i].instructorID);
+                Staff instructor = Staff.getInstructorName(list[i].instructorID);
                 AddRowToJTable(new Object[]{
-                   list[i].activityID,list[i].date,list[i].type,list[i].courseID,instructor.FirstName+" "+instructor.LastName,list[i].name
+                   list[i].activityID,list[i].date,list[i].type,list[i].courseID,instructor.firstName+" "+instructor.lastName,list[i].name
                    },instructoractivitylistTable);
             }
         }
@@ -7375,14 +7375,14 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try
         {
-            Activity[] list = Activity.getActivities(student.UserID);
+            Activity[] list = Activity.getActivities(student.userID);
             for(int i = 0; i<5&&list[i] != null ; i++) 
             {   
-                Staff instructor = Staff.getStaffName(list[i].instructorID);
+                Staff instructor = Staff.getInstructorName(list[i].instructorID);
                 Course cors = new Course(list[i].courseID);
                 cors.fillCourseInfo();
                 AddRowToJTable(new Object[]{
-                    list[i].date,list[i].type,cors.name,instructor.FirstName+" "+instructor.LastName,list[i].name
+                    list[i].date,list[i].type,cors.name,instructor.firstName+" "+instructor.lastName,list[i].name
                    },activityTable);
             }
         }
@@ -7406,13 +7406,13 @@ public class Interface extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) coursesTable.getModel();
         model.setRowCount(0);
         try{
-        Course[] list = Course.getCourses(student.UserID);
+        Course[] list = Course.getCourses(student.userID);
         for(int i = 0; list[i]!=null ; i++) 
         {
-            Grades grade = new Grades(student.UserID,list[i].courseID);
+            Grades grade = new Grades(student.userID,list[i].courseID);
             grade.fillGradesInfo();
                         AddRowToJTable(new Object[]{
-                                           list[i].courseID,list[i].name,Staff.getStaff(list[i].courseID)[0].FirstName+" "+Staff.getStaff(list[i].courseID)[0].LastName,list[i].description,grade.grade
+                                           list[i].courseID,list[i].name,Staff.getInstructors(list[i].courseID)[0].firstName+" "+Staff.getInstructors(list[i].courseID)[0].lastName,list[i].description,grade.grade
                                            },coursesTable);
         }
         }
@@ -7434,10 +7434,10 @@ public class Interface extends javax.swing.JFrame {
         Grades[] list = Grades.getGradesUsingCourseID(staff.courseID);
         for(int i = 0; list[i]!=null ; i++) 
         {
-            student = new Student(list[i].UserID);
+            student = new Student(list[i].StudentID);
             student.fillstudentInfo();
                         AddRowToJTable(new Object[]{
-                                           list[i].UserID,student.FirstName+" "+student.LastName,student.phone,student.academicYear,student.classNo,list[i].grade
+                                           list[i].StudentID,student.firstName+" "+student.lastName,student.phone,student.academicYear,student.classNo,list[i].grade
                                            },instructorcoursestudentslistTable);
         }
         }
@@ -7451,7 +7451,7 @@ public class Interface extends javax.swing.JFrame {
         Student[] list = Student.getStudents();
         for(int i = 0; list[i]!=null ; i++) 
                         AddRowToJTable(new Object[]{
-                                           list[i].UserID,list[i].FirstName+" "+list[i].LastName,list[i].phone,list[i].academicYear,list[i].classNo
+                                           list[i].userID,list[i].firstName+" "+list[i].lastName,list[i].phone,list[i].academicYear,list[i].classNo
                                            },adminstudentslistTable);
         }
         catch(NullPointerException e){}
@@ -7461,10 +7461,10 @@ public class Interface extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) admininstructorslistTable.getModel();
         model.setRowCount(0);
         try{
-        Staff[] list = Staff.getStaff();
+        Staff[] list = Staff.getInstructors();
         for(int i = 0; list[i]!=null ; i++) 
                         AddRowToJTable(new Object[]{
-                                           list[i].UserID,list[i].FirstName+" "+list[i].LastName,list[i].phone,list[i].courseID,list[i].salary
+                                           list[i].userID,list[i].firstName+" "+list[i].lastName,list[i].phone,list[i].courseID,list[i].salary
                                            },admininstructorslistTable);
         }
         catch(NullPointerException e){}
@@ -7477,17 +7477,17 @@ public class Interface extends javax.swing.JFrame {
         Course[] list = Course.getCourses();
         for(int i = 0; i<10 && list[i]!=null ; i++)  // why i<5 not just list[i]!=null
         {            
-         //System.out.println(list[i].courseID+list[i].name+ list[i].description+" "+Staff.getStaff(list[i].courseID)[0].FirstName+" "+Staff.getStaff(list[i].courseID)[0].LastName+" ");
+         //System.out.println(list[i].courseID+list[i].name+ list[i].description+" "+Staff.getInstructors(list[i].courseID)[0].firstName+" "+Staff.getInstructors(list[i].courseID)[0].lastName+" ");
             AddRowToJTable(new Object[]{
-                                           list[i].courseID,list[i].name,Staff.getStaff(list[i].courseID)[0].FirstName+" "+Staff.getStaff(list[i].courseID)[0].LastName,list[i].description
+                                           list[i].courseID,list[i].name,Staff.getInstructors(list[i].courseID)[0].firstName+" "+Staff.getInstructors(list[i].courseID)[0].lastName,list[i].description
                                            },admincourseslistTable);
         }
         }
         catch(NullPointerException e){}
     }
     private void profileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileButtonMousePressed
-        studentprofilenameText.setText(student.FirstName+" "+student.LastName);
-        studentprofileidText.setText(student.UserID); // to be changed later [ ADDED ]
+        studentprofilenameText.setText(student.firstName+" "+student.lastName);
+        studentprofileidText.setText(student.userID); // to be changed later [ ADDED ]
         studentprofilephoneText.setText(student.phone);
         studentprofilepasswordText.setText(student.password);
         studentprofilegenderText.setText(student.gender);
@@ -7837,7 +7837,7 @@ public class Interface extends javax.swing.JFrame {
         Grades grade = new Grades(instructorgrademodifystudentidText.getText(),instructorgrademodifycourseidText.getText(),instructorgrademodifygradeText.getText());
         if(grade.UpdateGrade())
         {
-            JOptionPane.showMessageDialog(this, "The grade of student ID "+grade.UserID+" has been set to "+grade.grade,"Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "The grade of student ID "+grade.StudentID+" has been set to "+grade.grade,"Success", JOptionPane.INFORMATION_MESSAGE);
         }
         else JOptionPane.showMessageDialog(this, "Could not modify!","Fail", JOptionPane.ERROR);
         reloadInstructorStudentsTable();
@@ -7855,10 +7855,10 @@ public class Interface extends javax.swing.JFrame {
 
     private void activitysaveButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_activitysaveButtonMousePressed
         Activity activity = new Activity(instructoraddactivitytextText.getText(),instructoraddactivitytypeText.getText()
-        ,instructoraddactivitylinkText.getText(),staff.UserID,instructoraddactivitydateText.getText(),staff.courseID);
+        ,instructoraddactivitylinkText.getText(),staff.userID,instructoraddactivitydateText.getText(),staff.courseID);
         if(activity.createActivity()) JOptionPane.showMessageDialog(this,  "Activity has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
         else JOptionPane.showMessageDialog(this,  "Activity has not been added!","Fail", JOptionPane.ERROR);
-        //String name, String type, String link, String instructorID, String date, String courseID
+        //String name, String type, String link, String instructorID, String modificationdate, String courseID
     }//GEN-LAST:event_activitysaveButtonMousePressed
 
     private void instructoraddactivitytextTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructoraddactivitytextTextActionPerformed
@@ -7894,10 +7894,10 @@ public class Interface extends javax.swing.JFrame {
         ,adminaddagestudentText.getText(),adminaddphonestudentText.getText(),adminaddagestudentText.getText(),name.nextToken(),name.nextToken(),adminaddbirthdatestudentText.getText(),adminaddclassnostudentText.getText(),adminaddpasswordstudentText.getText());
         if(student.addStudent())
         {
-            JOptionPane.showMessageDialog(this, student.UserID+" Student has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
-            History.historyAdd(staff.UserID,student.UserID+History.STUDENT_ADDED);
+            JOptionPane.showMessageDialog(this, student.userID+" Student has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
+            History.historyAdd(staff.userID,student.userID+History.STUDENT_ADDED);
         }
-        else JOptionPane.showMessageDialog(this, student.UserID+ " Student has not been added!","Fail", JOptionPane.ERROR);
+        else JOptionPane.showMessageDialog(this, student.userID+ " Student has not been added!","Fail", JOptionPane.ERROR);
     }//GEN-LAST:event_adminsaveStudentButton1MousePressed
 
     private void exitButton16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton16MousePressed
@@ -7918,7 +7918,7 @@ public class Interface extends javax.swing.JFrame {
         if(course.addCourse())
         {
             JOptionPane.showMessageDialog(this,  course.name+" course has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
-            History.historyAdd(staff.UserID,History.COURSE_ADDED);
+            History.historyAdd(staff.userID,History.COURSE_ADDED);
         }else JOptionPane.showMessageDialog(this,  course.name +" course has not been added!","Fail", JOptionPane.ERROR);
     }//GEN-LAST:event_adminsaveCourseButton2MousePressed
 
@@ -7934,7 +7934,7 @@ public class Interface extends javax.swing.JFrame {
             adminsaveStudentButton4.setVisible(true);
             adminmodifyidstudentText.setEditable(false);
             adminmodifynamestudentPanel.setVisible(true);
-            adminmodifynamestudentText.setText(student.FirstName+" "+student.LastName);
+            adminmodifynamestudentText.setText(student.firstName+" "+student.lastName);
             adminmodifypasswordstudentPanel.setVisible(true);
             adminmodifypasswordstudentText.setText(student.password);    
             adminmodifyphonestudentPanel.setVisible(true);
@@ -7959,8 +7959,8 @@ public class Interface extends javax.swing.JFrame {
     private void adminsaveInstructorButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsaveInstructorButton2MousePressed
             
             StringTokenizer name = new StringTokenizer(adminmodifynameinstructorText.getText());
-            tempStaff.FirstName = name.nextToken();
-            tempStaff.LastName = name.nextToken();
+            tempStaff.firstName = name.nextToken();
+            tempStaff.lastName = name.nextToken();
             tempStaff.password = adminmodifypasswordinstructorText.getText();
             tempStaff.phone = adminmodifyphoneinstructorText.getText();
             tempStaff.gender = adminmodifygenderinstructorText.getText();
@@ -7970,10 +7970,10 @@ public class Interface extends javax.swing.JFrame {
             tempStaff.salary = adminmodifysalaryinstructorText.getText();
             if(tempStaff.updateStaff()) 
             {
-                JOptionPane.showMessageDialog(this,  tempStaff.UserID+" instructor has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
-                                History.historyAdd(staff.UserID,tempStaff.UserID+" "+History.INSTRUCTOR_UPDATED);
+                JOptionPane.showMessageDialog(this,  tempStaff.userID+" instructor has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
+                                History.historyAdd(staff.userID,tempStaff.userID+" "+History.INSTRUCTOR_UPDATED);
             }
-            else JOptionPane.showMessageDialog(this,  tempStaff.UserID+" student has not been modified!","Fail", JOptionPane.ERROR);
+            else JOptionPane.showMessageDialog(this,  tempStaff.userID+" student has not been modified!","Fail", JOptionPane.ERROR);
             
             adminsaveInstructorButton2.setVisible(false);
             adminmodifyselectinstructorButton.setVisible(true);
@@ -8000,7 +8000,7 @@ public class Interface extends javax.swing.JFrame {
             if(course.updateCourse()) 
             {
                 JOptionPane.showMessageDialog(this,  course.courseID+" student has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
-                                History.historyAdd(staff.UserID,course.courseID+" "+History.COURSE_UPDATED);
+                                History.historyAdd(staff.userID,course.courseID+" "+History.COURSE_UPDATED);
             }
             else JOptionPane.showMessageDialog(this,  course.courseID+" student has not been modified!","Fail", JOptionPane.ERROR);
             
@@ -8017,7 +8017,7 @@ public class Interface extends javax.swing.JFrame {
         if(Student.deleteUser(admindeletestudentText.getText())) 
         {
             JOptionPane.showMessageDialog(this,  admindeletestudentText.getText()+" student has been deleted!","Success", JOptionPane.INFORMATION_MESSAGE);
-                            History.historyAdd(staff.UserID,student.UserID+" "+History.STUDENT_DELETED);
+                            History.historyAdd(staff.userID,student.userID+" "+History.STUDENT_DELETED);
         }
             else JOptionPane.showMessageDialog(this,  admindeletestudentText.getText()+" student has not been delete!","Fail", JOptionPane.ERROR);
     }//GEN-LAST:event_admindeletestudentButtonMousePressed
@@ -8026,7 +8026,7 @@ public class Interface extends javax.swing.JFrame {
         if(Staff.deleteUser(admindeleteinstructorText.getText())) 
         {
             JOptionPane.showMessageDialog(this,  admindeleteinstructorText.getText()+" instructor has been deleted!","Success", JOptionPane.INFORMATION_MESSAGE);
-                        History.historyAdd(staff.UserID,tempStaff.UserID+" "+History.INSTRUCTOR_DELETED);
+                        History.historyAdd(staff.userID,tempStaff.userID+" "+History.INSTRUCTOR_DELETED);
         }
             else JOptionPane.showMessageDialog(this,  admindeleteinstructorText.getText()+" instructor has not been delete!","Fail", JOptionPane.ERROR);
     }//GEN-LAST:event_admindeleteinstructorButtonMousePressed
@@ -8035,7 +8035,7 @@ public class Interface extends javax.swing.JFrame {
         if(Course.deleteCourse(admindeletecourseText.getText())) 
         {
             JOptionPane.showMessageDialog(this,  admindeletecourseText.getText()+" course has been deleted!","Success", JOptionPane.INFORMATION_MESSAGE);
-                History.historyAdd(staff.UserID,course.courseID+" "+History.COURSE_DELETED);        
+                History.historyAdd(staff.userID,course.courseID+" "+History.COURSE_DELETED);        
         }
             else JOptionPane.showMessageDialog(this,  admindeletecourseText.getText()+" course has not been delete!","Fail", JOptionPane.ERROR);
     }//GEN-LAST:event_admindeletecourseButtonMousePressed
@@ -8049,8 +8049,8 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_admindeletecourseTextActionPerformed
 
     private void adminprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminprofileButtonMousePressed
-        adminprofilenameText.setText(staff.FirstName+" "+staff.LastName);
-        adminprofileidText.setText(staff.UserID); // to be changed later [ ADDED ]
+        adminprofilenameText.setText(staff.firstName+" "+staff.lastName);
+        adminprofileidText.setText(staff.userID); // to be changed later [ ADDED ]
         adminprofilesalaryText.setText(staff.phone);
         adminprofilepasswordText.setText(staff.password);
         SideButton(adminprofileButton,adminprofilePanel,adminprofileSideButton);
@@ -8138,7 +8138,7 @@ public class Interface extends javax.swing.JFrame {
         if(tempStaff.addStaff())
         {
             JOptionPane.showMessageDialog(this, "Instructor has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
-            History.historyAdd(staff.UserID,History.INSTRUCTOR_ADDED);
+            History.historyAdd(staff.userID,History.INSTRUCTOR_ADDED);
         };
     }//GEN-LAST:event_adminsaveStudentButton3MousePressed
 
@@ -8149,8 +8149,8 @@ public class Interface extends javax.swing.JFrame {
     private void adminsaveStudentButton4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsaveStudentButton4MousePressed
             
             StringTokenizer name = new StringTokenizer(adminmodifynamestudentText.getText());
-            student.FirstName = name.nextToken();
-            student.LastName = name.nextToken();
+            student.firstName = name.nextToken();
+            student.lastName = name.nextToken();
             student.password = adminmodifypasswordstudentText.getText();
             student.phone = adminmodifyphonestudentText.getText();
             student.gender = adminmodifygenderstudentText.getText();
@@ -8160,10 +8160,10 @@ public class Interface extends javax.swing.JFrame {
             student.classNo = adminmodifyclassnostudentText.getText();
             if(student.updateStudent()) 
             {
-                JOptionPane.showMessageDialog(this,  student.UserID+" student has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
-                History.historyAdd(staff.UserID,student.UserID+" "+History.STUDENT_UPDATED);
+                JOptionPane.showMessageDialog(this,  student.userID+" student has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
+                History.historyAdd(staff.userID,student.userID+" "+History.STUDENT_UPDATED);
             }
-            else JOptionPane.showMessageDialog(this,  student.UserID+" student has not been modified!","Fail", JOptionPane.ERROR);
+            else JOptionPane.showMessageDialog(this,  student.userID+" student has not been modified!","Fail", JOptionPane.ERROR);
             
             adminsaveStudentButton4.setVisible(false);
             adminmodifyselectstudentButton.setVisible(true);
@@ -8192,7 +8192,7 @@ public class Interface extends javax.swing.JFrame {
             adminsaveInstructorButton2.setVisible(true);
             adminmodifyidinstructorText.setEditable(false);
             adminmodifynameinstructorPanel.setVisible(true);
-            adminmodifynameinstructorText.setText(tempStaff.FirstName+" "+tempStaff.LastName);
+            adminmodifynameinstructorText.setText(tempStaff.firstName+" "+tempStaff.lastName);
             adminmodifypasswordinstructorPanel.setVisible(true);
             adminmodifypasswordinstructorText.setText(tempStaff.password);    
             adminmodifyphoneinstructorPanel.setVisible(true);
@@ -8246,14 +8246,14 @@ public class Interface extends javax.swing.JFrame {
         if(grades.addGrade())
         {
             JOptionPane.showMessageDialog(this,  adminenrollstudentidstudentText.getText()+" student has been added to course "+adminenrollcourseidstudentText.getText()+"!","Success", JOptionPane.INFORMATION_MESSAGE);
-            History.historyAdd(staff.UserID,adminenrollstudentidstudentText.getText()+" "+adminenrollstudentidstudentText.getText()+" student has been added to course "+adminenrollcourseidstudentText.getText());
+            History.historyAdd(staff.userID,adminenrollstudentidstudentText.getText()+" "+adminenrollstudentidstudentText.getText()+" student has been added to course "+adminenrollcourseidstudentText.getText());
         }
         else JOptionPane.showMessageDialog(this,  adminenrollstudentidstudentText.getText()+" student has not been added to course "+adminenrollcourseidstudentText.getText()+"!","Fail", JOptionPane.ERROR);
     }//GEN-LAST:event_adminenrollsavestudentButtonMousePressed
 
     private void instructorprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorprofileButtonMousePressed
-        instructorprofileidText.setText(staff.UserID);
-        instructorprofilenameText.setText(staff.FirstName+" "+staff.LastName);
+        instructorprofileidText.setText(staff.userID);
+        instructorprofilenameText.setText(staff.firstName+" "+staff.lastName);
         instructorprofilesalaryText.setText(staff.salary);
         instructorprofilepasswordText.setText(staff.password);
         SideButton(instructorprofileButton,instructorprofilePanel,instructorprofileSideButton);
