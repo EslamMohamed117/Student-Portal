@@ -10,20 +10,20 @@ package Classes;
  * @author raya
  */
 public class Grades {
-    public String UserID, CourseID, grade;
+    public String StudentID, CourseID, grade;
     private static DBInterface DB = new DBInterface();
     public Grades() {
     }
 
     
     public Grades(String UserID, String CourseID) {
-        this.UserID = UserID;
+        this.StudentID = UserID;
         this.CourseID = CourseID;
         this.grade="0";
     }
 
     public Grades(String UserID, String CourseID, String grade) {
-        this.UserID = UserID;
+        this.StudentID = UserID;
         this.CourseID = CourseID;
         this.grade = grade;
     }
@@ -40,7 +40,7 @@ public class Grades {
     }
     
     public static boolean DeleteGradeUsingUserID(String UserID){
-        return DB.deleteUserFromGrades(UserID);//deletes all of the grades belonging to this USERID
+        return DB.deleteUserFromStudies(UserID);//deletes all of the grades belonging to this USERID
     }
     public static boolean DeleteGradeUsingCourseID(String CourseID){
         return DB.deleteCourseFromGrade(CourseID);//deletes all of the grades belonging to this USERID
