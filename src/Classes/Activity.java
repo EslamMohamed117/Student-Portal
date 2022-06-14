@@ -5,7 +5,12 @@
  */
 package Classes;
 
-import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,7 +18,7 @@ import java.sql.Date;
  */
 public class Activity {
     public String activityID, name, type, link, instructorID, courseID;
-    Date date;
+    public Date date;
     private final static DBInterface DB = new DBInterface();
     
     public Activity(String name, String type, String link, String instructorID, Date date, String courseID) {
@@ -31,6 +36,13 @@ public class Activity {
         this.link = link;
         this.instructorID = instructorID;
         this.date = date;
+        this.courseID=courseID;
+    }
+    public Activity(String name, String type, String link, String instructorID, String courseID) {
+        this.name = name;
+        this.type = type;
+        this.link = link;
+        this.instructorID = instructorID;
         this.courseID=courseID;
     }
     
@@ -73,4 +85,18 @@ public class Activity {
     public static Activity[] getActivitiesUsingCourseID(String courseID){
         return DB.getActivitiesUsingCourseID(courseID);
     }
+    public String getDate() {
+        DateFormat dateFormat = new SimpleDateFormat("DD/MM/YYYY");
+        String strDate = dateFormat.format(this.date);
+        return strDate;
+    }
+
+    public void setDate(String sDate1){
+        try {
+            this.date = new java.sql.Date((new SimpleDateFormat("DD/MM/YYYY").parse(sDate1)).getTime());
+        } catch (ParseException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

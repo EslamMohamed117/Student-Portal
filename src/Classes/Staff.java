@@ -60,16 +60,23 @@ public class Staff extends User{
         this.birthDate  = birthDate;
         this.gender     = gender;
     }
-    
+    public Staff(String CourseID, String salary, String firstName, String lastName, String gender, String password) {
+        this.firstName  = firstName;
+        this.lastName   = lastName;
+        this.gender     = gender;
+        this.gender     = gender;
+        this.salary     = salary;
+        this.password   = password;
+    }
 
     public boolean addStaff(){
-        if(this.userID.startsWith("2"))
+        if(this.userID.startsWith("1"))
             return DB.addAdmin(this);
         return DB.addInstructor(this);
         
     }
     public boolean updateStaff(){
-        if (this.userID.startsWith("2"))
+        if (this.userID.startsWith("1"))
             return DB.updateAdmin(this);
         return DB.updateInstructor(this);
     }
@@ -83,7 +90,7 @@ public class Staff extends User{
         return fillStaffInfo();
     }
     public boolean fillStaffInfo(){
-        if(this.userID.startsWith("2"))
+        if(this.userID.startsWith("1"))
             return DB.getAdminInfo(this);
         return DB.getInstructorInfo(this);
     }

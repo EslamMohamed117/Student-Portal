@@ -43,6 +43,14 @@ public class Student extends User {
         this.gender = gender;
         this.birthDate = birthDate;
     }
+    public Student(String academicYear, String classNo, String FirstName, String LastName, String gender, String password) {
+        this.academicYear = academicYear;
+        this.classNo = classNo;
+        this.firstName = FirstName;
+        this.lastName = LastName;
+        this.gender = gender;
+        this.password = password;
+    }
     
     public boolean fillstudentInfo(){
         return DB.getStudentInfo(this);

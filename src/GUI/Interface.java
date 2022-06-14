@@ -6617,33 +6617,30 @@ public class Interface extends javax.swing.JFrame {
         profileDataPanel2Layout.setHorizontalGroup(
             profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(profileDataPanel2Layout.createSequentialGroup()
-                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(profileDataPanel2Layout.createSequentialGroup()
-                        .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(jLabel3))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(instructorprofileidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(instructorprofilenamePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(instructorprofilesalaryPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(instructorprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(instructorprofileeditButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(basicinfoStart2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 252, Short.MAX_VALUE))
-                    .addGroup(profileDataPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(instructorprofilediscardButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(instructorprofilesaveButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, 0))
+                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(instructorprofileidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(instructorprofilenamePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(instructorprofilesalaryPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(instructorprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, profileDataPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(instructorprofileeditButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(basicinfoStart2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 252, Short.MAX_VALUE))
+            .addGroup(profileDataPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(profileDataPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(instructorprofilediscardButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(instructorprofilesaveButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profileDataPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(adminprofileText1)
@@ -7400,7 +7397,7 @@ public class Interface extends javax.swing.JFrame {
         History[] list = History.getAdminHistory();
         for(int i = 0; i<list.length && list[i] != null ; i++) 
             AddRowToJTable(new Object[]{
-                list[i].HistoryID,list[i].adminID,list[i].Date,list[i].description
+                list[i].adminID,list[i].modificationdate,list[i].description
                     },adminactivityTable);
         }
         catch(NullPointerException e){}
@@ -7482,7 +7479,7 @@ public class Interface extends javax.swing.JFrame {
         for(int i = 0; i<list.length && list[i]!=null ; i++)  // why i<5 not just list[i]!=null
         {            
          //System.out.println(list[i].courseID+list[i].name+ list[i].description+" "+Staff.getStaff(list[i].courseID)[0].FirstName+" "+Staff.getStaff(list[i].courseID)[0].LastName+" ");
-            if(Staff.getStaff(list[i].courseID)[0]==null)
+            if(Staff.getInstructors(list[i].courseID)[0]==null)
             {
                 AddRowToJTable(new Object[]{
                                            list[i].courseID,list[i].name,"No instructor",list[i].description
@@ -7502,7 +7499,7 @@ public class Interface extends javax.swing.JFrame {
     private void profileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileButtonMousePressed
         studentprofilenameText.setText(student.firstName+" "+student.lastName);
         studentprofileidText.setText(student.userID); // to be changed later [ ADDED ]
-        studentprofilephoneText.setText(student.phone);
+        studentprofilephoneText.setText(student.phone[0]);
         studentprofilepasswordText.setText(student.password);
         studentprofilegenderText.setText(student.gender);
         studentprofileacadmicyearText.setText(student.academicYear);
@@ -7803,12 +7800,13 @@ public class Interface extends javax.swing.JFrame {
         instructorprofilesaveButton.setVisible(true);
         instructorprofilediscardButton.setVisible(true);
         instructorprofilepasswordText.setEditable(true);
-        tempData[0] = instructorprofilepasswordText.getText();
+        //tempData[0] = instructorprofilepasswordText.getText();
     }//GEN-LAST:event_instructorprofileeditButtonMousePressed
 
     private void instructorprofilesaveButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorprofilesaveButtonMousePressed
         staff.password=instructorprofilepasswordText.getText();  //Password need to be added
         staff.updateStaff();
+        System.out.println("Done");
         instructorprofilepasswordText.setEditable(false);
         instructorprofileeditButton.setVisible(true);
         instructorprofilesaveButton.setVisible(false);
@@ -7816,7 +7814,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_instructorprofilesaveButtonMousePressed
 
     private void instructorprofilediscardButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorprofilediscardButtonMousePressed
-        instructorprofilepasswordText.setText(tempData[0]);
+        //instructorprofilepasswordText.setText(tempData[0]);
         instructorprofilepasswordText.setEditable(false);
         instructorprofileeditButton.setVisible(true);
         instructorprofilesaveButton.setVisible(false);
@@ -7869,7 +7867,8 @@ public class Interface extends javax.swing.JFrame {
 
     private void activitysaveButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_activitysaveButtonMousePressed
         Activity activity = new Activity(instructoraddactivitytextText.getText(),instructoraddactivitytypeText.getText()
-        ,instructoraddactivitylinkText.getText(),staff.userID,instructoraddactivitydateText.getText(),staff.courseID);
+        ,instructoraddactivitylinkText.getText(),staff.userID,staff.courseID);
+        activity.setDate(instructoraddactivitydateText.getText());
         if(activity.createActivity()) JOptionPane.showMessageDialog(this,  "Activity has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
         else JOptionPane.showMessageDialog(this,  "Activity has not been added!","Fail", JOptionPane.ERROR);
         //String name, String type, String link, String instructorID, String modificationdate, String courseID
@@ -7890,7 +7889,11 @@ public class Interface extends javax.swing.JFrame {
     private void adminsaveStudentButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsaveStudentButton1MousePressed
         StringTokenizer name = new StringTokenizer(adminaddnamestudentText.getText());
         student = new Student(adminaddacadmicyearstudentText.getText(),adminaddclassnostudentText.getText()
-        ,adminaddagestudentText.getText(),adminaddphonestudentText.getText(),adminaddagestudentText.getText(),name.nextToken(),name.nextToken(),adminaddbirthdatestudentText.getText(),adminaddclassnostudentText.getText(),adminaddpasswordstudentText.getText());
+        ,name.nextToken(),name.nextToken(),adminaddgenderstudentText.getText(),adminaddpasswordstudentText.getText());
+        student.setDate(adminaddbirthdatestudentText.getText());
+        student.calc_age();
+        String[] phone = {adminaddphonestudentText.getText(),adminaddphonestudentText.getText()+"1"};
+        student.setPhone(phone);
         if(student.addStudent())
         {
             JOptionPane.showMessageDialog(this, student.userID+" Student has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
@@ -7937,13 +7940,13 @@ public class Interface extends javax.swing.JFrame {
             adminmodifypasswordstudentPanel.setVisible(true);
             adminmodifypasswordstudentText.setText(student.password);    
             adminmodifyphonestudentPanel.setVisible(true);
-            adminmodifyphonestudentText.setText(student.phone);
+            adminmodifyphonestudentText.setText(student.phone[0]); //problem 2
             adminmodifygenderstudentPanel.setVisible(true);
             adminmodifygenderstudentText.setText(student.gender);
             adminmodifyagestudentPanel.setVisible(true);
             adminmodifyagestudentText.setText(student.age);
             adminmodifybirthdatestudentPanel.setVisible(true);
-            adminmodifybirthdatestudentText.setText(student.birthDate);
+            adminmodifybirthdatestudentText.setText(student.getDate());
             adminmodifyacadmicyearstudentPanel.setVisible(true);
             adminmodifyacadmicyearstudentText.setText(student.academicYear);
             adminmodifyclassnostudentPanel.setVisible(true);
@@ -7961,10 +7964,10 @@ public class Interface extends javax.swing.JFrame {
             tempStaff.firstName = name.nextToken();
             tempStaff.lastName = name.nextToken();
             tempStaff.password = adminmodifypasswordinstructorText.getText();
-            tempStaff.phone = adminmodifyphoneinstructorText.getText();
+            //tempStaff.phone = adminmodifyphoneinstructorText.getText();   phone problem 1
             tempStaff.gender = adminmodifygenderinstructorText.getText();
             tempStaff.age = adminmodifyageinstructorText.getText();
-            tempStaff.birthDate = adminmodifybirthdateinstructorText.getText();
+            tempStaff.setDate(adminmodifybirthdateinstructorText.getText()); 
             tempStaff.courseID = adminmodifycoursecodeinstructorText.getText();
             tempStaff.salary = adminmodifysalaryinstructorText.getText();
             if(tempStaff.updateStaff()) 
@@ -8050,7 +8053,6 @@ public class Interface extends javax.swing.JFrame {
     private void adminprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminprofileButtonMousePressed
         adminprofilenameText.setText(staff.firstName+" "+staff.lastName);
         adminprofileidText.setText(staff.userID); // to be changed later [ ADDED ]
-        adminprofilesalaryText.setText(staff.phone);
         adminprofilepasswordText.setText(staff.password);
         SideButton(adminprofileButton,adminprofilePanel,adminprofileSideButton);
     }//GEN-LAST:event_adminprofileButtonMousePressed
@@ -8085,7 +8087,8 @@ public class Interface extends javax.swing.JFrame {
 
     private void studentsaveprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentsaveprofileButtonMousePressed
         student.password = studentprofilepasswordText.getText();
-        student.phone = studentprofilephoneText.getText();
+        String[] phones = {studentprofilephoneText.getText(),studentprofilephoneText.getText()};
+        student.setPhone(phones); // phone problem 3
         student.updateStudent();
         studentprofilepasswordText.setEditable(false);
         studentprofilephoneText.setEditable(false);
@@ -8096,7 +8099,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void studentdiscardprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentdiscardprofileButtonMousePressed
         studentprofilepasswordText.setText(student.password);
-        studentprofilephoneText.setText(student.phone);
+        studentprofilephoneText.setText(student.phone[0]);// phone problem 4
         studentprofilepasswordText.setEditable(false);
         studentprofilephoneText.setEditable(false);
         studenteditprofileButton.setVisible(true);
@@ -8110,10 +8113,12 @@ public class Interface extends javax.swing.JFrame {
 
     private void adminsaveStudentButton3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsaveStudentButton3MousePressed
         StringTokenizer name = new StringTokenizer(adminaddnameinstructorText.getText());
-        tempStaff = new Staff(adminaddcoursecodeinstructorText.getText(),adminaddsalaryinstructorText.getText()
-        ,adminaddageinstructorText.getText(),adminaddphoneinstructorText.getText(),
-                name.nextToken(),name.nextToken(),adminaddbirthdateinstructorText.getText(),adminaddgenderinstructorText.getText(),
-                adminaddpasswordinstructorText.getText(),"Dummy");
+        tempStaff = new Staff(adminaddcoursecodeinstructorText.getText(),adminaddsalaryinstructorText.getText(),
+                name.nextToken(),name.nextToken(),adminaddgenderinstructorText.getText(),
+                adminaddpasswordinstructorText.getText());
+        String[] phones = {adminaddphoneinstructorText.getText(),adminaddphoneinstructorText.getText()};
+        tempStaff.setPhone(phones); // phone problem 5
+        tempStaff.setDate(adminaddbirthdateinstructorText.getText());
         if(tempStaff.addStaff())
         {
             JOptionPane.showMessageDialog(this, "Instructor has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
@@ -8131,10 +8136,11 @@ public class Interface extends javax.swing.JFrame {
             student.firstName = name.nextToken();
             student.lastName = name.nextToken();
             student.password = adminmodifypasswordstudentText.getText();
-            student.phone = adminmodifyphonestudentText.getText();
+            String[] phones = {adminmodifyphonestudentText.getText(),adminmodifyphonestudentText.getText()};
+            student.setPhone(phones); // phone problem 6
             student.gender = adminmodifygenderstudentText.getText();
             student.age = adminmodifyagestudentText.getText();
-            student.birthDate = adminmodifybirthdatestudentText.getText();
+            student.setDate(adminmodifybirthdatestudentText.getText());
             student.academicYear = adminmodifyacadmicyearstudentText.getText();
             student.classNo = adminmodifyclassnostudentText.getText();
             if(student.updateStudent()) 
@@ -8175,13 +8181,13 @@ public class Interface extends javax.swing.JFrame {
             adminmodifypasswordinstructorPanel.setVisible(true);
             adminmodifypasswordinstructorText.setText(tempStaff.password);    
             adminmodifyphoneinstructorPanel.setVisible(true);
-            adminmodifyphoneinstructorText.setText(tempStaff.phone);
+            adminmodifyphoneinstructorText.setText(tempStaff.phone[0]); // phone problem 7
             adminmodifygenderinstructorPanel.setVisible(true);
             adminmodifygenderinstructorText.setText(tempStaff.gender);
             adminmodifyageinstructorPanel.setVisible(true);
             adminmodifyageinstructorText.setText(tempStaff.age);
             adminmodifybirthdateinstructorPanel.setVisible(true);
-            adminmodifybirthdateinstructorText.setText(tempStaff.birthDate);
+            adminmodifybirthdateinstructorText.setText(tempStaff.getDate());
             adminmodifycoursecodeinstructorPanel.setVisible(true);
             adminmodifycoursecodeinstructorText.setText(tempStaff.courseID);
             adminmodifysalaryinstructorPanel.setVisible(true);
@@ -8712,6 +8718,9 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel exitButton7;
     private javax.swing.JLabel exitButton8;
     private javax.swing.JLabel exitButton9;
+    private javax.swing.JComboBox<String> firstplayerChoice;
+    private javax.swing.JComboBox<String> firstplayerChoice1;
+    private javax.swing.JComboBox<String> firstplayerChoice2;
     private javax.swing.JPanel homeButton;
     private javax.swing.JLabel homeButtonLabel;
     private javax.swing.JPanel homePanel;
