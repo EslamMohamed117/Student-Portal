@@ -50,6 +50,7 @@ public class Staff extends User{
         this.birthDate  = birthDate;
         this.gender     = gender;
         this.salary     = salary;
+        this.courseID   = CourseID;
     }
     
     Staff(String userID, String firstName, String lastName, Date birthDate, String gender) {
@@ -61,6 +62,7 @@ public class Staff extends User{
         this.gender     = gender;
     }
     public Staff(String CourseID, String salary, String firstName, String lastName, String gender, String password) {
+        this.courseID   = CourseID;
         this.firstName  = firstName;
         this.lastName   = lastName;
         this.gender     = gender;
@@ -69,11 +71,13 @@ public class Staff extends User{
         this.password   = password;
     }
 
-    public boolean addStaff(){
-        if(this.userID.startsWith("1"))
-            return DB.addAdmin(this);
-        return DB.addInstructor(this);
-        
+    public boolean addInstructor(){
+        if(DB.addInstructor(this)) return true;
+        else 
+        {
+            deleteInstructor(this.userID);
+            return false;
+        }
     }
     public boolean updateStaff(){
         if (this.userID.startsWith("1"))
@@ -108,7 +112,9 @@ public class Staff extends User{
         return DB.getInstructorsNameFromInstructorID(instructorID);
     }
     
-
+    public boolean deleteInstructort(){
+        return DB.deleteInstructor(this.userID);
+    }
 
     
     

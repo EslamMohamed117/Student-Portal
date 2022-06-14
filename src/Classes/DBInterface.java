@@ -142,7 +142,7 @@ public class DBInterface {
                 sql = "UPDATE Course SET Name = ?, Description = ? WHERE CourseID = ?";
                 break;
             case INSTRUCTOR_TABLE:
-                sql = "UPDATE Instructor SET Salary = ? WHERE InstructorID = ?";
+                sql = "UPDATE Instructor SET Salary = ?, CourseID = ? WHERE InstructorID = ?";
                 break;
             case PHONE_TABLE:
                 sql = "UPDATE Phone SET Phone = ? where USERID = ? AND Phone = ?";//<< ARE YOU SURE OF THIS ?
@@ -194,7 +194,8 @@ public class DBInterface {
     
     private int CountRecords(String table, String cond) throws SQLException{
         pstmt = con.prepareStatement("SELECT COUNT( * ) FROM " + table +  cond);
-        pstmt.executeQuery();
+        rs = pstmt.executeQuery();
+        rs.next();
         return rs.getInt(1);
     }
     
@@ -211,6 +212,9 @@ public class DBInterface {
                 break;
             case ADMIN_TABLE:
                 pstmt = con.prepareStatement("SELECT MAX(ADMINID+1) FROM ADMIN");
+                break;
+            case ACTIVITY_TABLE:
+                pstmt = con.prepareStatement("SELECT COUNT(*) FROM ACTIVITY");
                 break;
                 
                 
@@ -263,7 +267,7 @@ public class DBInterface {
             if(!rs.next()) return false;//Check if Course Exists in Course Data base
             
             InsertIntoTable(STUDIES_TABLE);
-            pstmt=con.prepareStatement(sql+ " Values(?,?,?)");//3 Parameters
+            pstmt=con.prepareStatement(sql);//3 Parameters
             pstmt.setInt(1,Integer.parseInt( g.StudentID));
             pstmt.setString(2, g.CourseID);
             pstmt.setString(3, g.grade);
@@ -286,8 +290,8 @@ public class DBInterface {
             String year = String.valueOf(date.getYear());
             
             staffMember.userID = IDGenerator(INSTRUCTOR_TABLE);
-            if(staffMember.userID==null || !staffMember.userID.startsWith("1" + year))//Contains null or Newest year User
-                staffMember.userID = "1" + year + "0000";
+            if(staffMember.userID==null || !staffMember.userID.startsWith("2" + year))//Contains null or Newest year User
+                staffMember.userID = "2" + year + "0000";
             
             addUser(staffMember);
             InsertIntoTable(INSTRUCTOR_TABLE);
@@ -299,7 +303,8 @@ public class DBInterface {
             return true;
         }
         catch (SQLException ex) {
-            Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
+            deleteUser(staffMember.userID);
+            Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);  
             return false;
         }
     }
@@ -310,8 +315,8 @@ public class DBInterface {
             String year = String.valueOf(date.getYear());
             
             staffMember.userID = IDGenerator(ADMIN_TABLE);
-            if(staffMember.userID==null || !staffMember.userID.startsWith("2" + year))//Contains null or Newest year User
-                staffMember.userID = "2" + year + "0000";
+            if(staffMember.userID==null || !staffMember.userID.startsWith("1" + year))//Contains null or Newest year User
+                staffMember.userID = "1" + year + "0000";
             
             addUser(staffMember);
             InsertIntoTable(ADMIN_TABLE);// NEW CHANGES!
@@ -353,6 +358,7 @@ public class DBInterface {
             return true;
         }
         catch (SQLException ex) {
+            deleteUser(studentMember.userID);
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
@@ -363,6 +369,11 @@ public class DBInterface {
      * @throws SQLException 
      * Adds a tuple into User table.
      */
+    private String reverseGender(String gender)
+    {
+        if(gender.equals("Male")) return "m";
+        else                      return "f";
+    }
     private void addUser(User member) throws SQLException{
         InsertIntoTable(USERS_TABLE);
         pstmt=con.prepareStatement(sql);
@@ -370,9 +381,8 @@ public class DBInterface {
         pstmt.setString(2, member.firstName);
         pstmt.setString(3, member.lastName );
         pstmt.setDate  (4, (Date) member.birthDate);
-        pstmt.setString(5, member.gender   );
+        pstmt.setString(5, reverseGender(member.gender)   );
         pstmt.setString(6, member.password );
-        System.out.println("UserID: "+member.userID);
         pstmt.executeUpdate();
         
         for(int i=0; i<2 && member.phone[i]!=null; i++){//Insert phone numbers //Revise this one.
@@ -382,6 +392,7 @@ public class DBInterface {
             pstmt.setInt(2,Integer.parseInt(member.phone[i]));
             pstmt.executeUpdate();
         }
+        
     }
     /**
      * 
@@ -489,43 +500,49 @@ public class DBInterface {
      * @return 
      */
     
-    public boolean deleteUser (String userID){
-        if (userID.startsWith("3")){
-            deleteUserFromStudies(userID);//deletes all grades belonging to this student
+    public boolean deleteStudent(String userID){
+        deleteUserFromStudies(userID);//deletes all grades belonging to this student
+        try {
             deleteFromTable(STUDENT_TABLE);
-            sql+=" STUDENTID = ? ";
-            
+            pstmt= con.prepareStatement(sql + " STUDENTID= ?");
+            pstmt.setInt(1, Integer.parseInt(userID));
+            pstmt.executeUpdate();
+            deleteUser(userID);
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
-        /*else if (userID.startsWith("2")){
-            deleteAdminHistory(userID);
-            deleteFromTable(ADMIN_TABLE);
-            sql+=" ADMINID = ?";
-        }*/
-        else if(userID.startsWith("1")){
-            deleteInstructorFromActivity(userID);//deletes all activities belonging to this instructor
+    }
+    public boolean deleteInstructor(String userID){
+        deleteInstructorFromActivity(userID);//deletes all activities belonging to this instructor
             deleteFromTable(INSTRUCTOR_TABLE);
-            sql+=" INSRTUCTORID = ?";
-        
+        try {
+            pstmt= con.prepareStatement(sql + " INSTRUCTORID = ?");
+            pstmt.setInt(1, Integer.parseInt(userID));
+            pstmt.executeUpdate();
+            deleteUser(userID);
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
-        else return false;
-        
+    }
+
+    public boolean deleteUser (String userID){
         try{
-        pstmt = con.prepareStatement(sql);
-        pstmt.setInt(1,Integer.parseInt(userID));
-        pstmt.executeUpdate();//Deleted Instructor from instructor Table
-        deletePhone(userID);  
+        deletePhone(userID);
         deleteFromTable(USERS_TABLE);
-        pstmt = con.prepareStatement(sql + " USERID = ?");
-        pstmt.setInt(1,Integer.parseInt(userID));
+        pstmt= con.prepareStatement(sql + " USERID= ?");
+        pstmt.setInt(1, Integer.parseInt(userID));
         pstmt.executeUpdate();
         
         return true;
-        //System.out.println("Data has been deleted!");//not true!!
         }
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
-        }    
+        }
     }
     /**
      * 
@@ -586,9 +603,9 @@ public class DBInterface {
         updateInTable(STUDIES_TABLE);
         try{
             pstmt=con.prepareStatement(sql);
-            pstmt.setInt(1,Integer.parseInt( g.StudentID));
-            pstmt.setString(2, g.CourseID);
-            pstmt.setInt(3,Integer.parseInt(g.grade));
+            pstmt.setInt(2,Integer.parseInt( g.StudentID));
+            pstmt.setString(3, g.CourseID);
+            pstmt.setInt(1,Integer.parseInt(g.grade));
             pstmt.executeUpdate(); 
             return true;
         }
@@ -630,8 +647,8 @@ public class DBInterface {
             updateInTable(INSTRUCTOR_TABLE);
             pstmt=con.prepareStatement(sql);
             pstmt.setInt(1,Integer.parseInt(stf.salary));  
-            pstmt.setInt(2, Integer.parseInt(stf.userID));//Instructor ID  
-            pstmt.setString(3, stf.courseID );
+            pstmt.setString(2, stf.courseID );
+            pstmt.setInt(3, Integer.parseInt(stf.userID));//Instructor ID  
             pstmt.executeUpdate(); 
             return true;
         }
@@ -666,7 +683,7 @@ public class DBInterface {
         pstmt.setString(1, usr.firstName);
         pstmt.setString(2, usr.lastName ); 
         pstmt.setDate  (3, (Date) usr.birthDate); 
-        pstmt.setString(4, usr.gender   );
+        pstmt.setString(4, reverseGender(usr.gender)   );
         System.out.println(usr.password);
         pstmt.setString(5, usr.password );
         pstmt.setInt(6, Integer.parseInt(usr.userID));
@@ -675,38 +692,16 @@ public class DBInterface {
         updatePhone(usr.phone, usr.userID);
     }
     private void updatePhone(String newPhone[], String userID) throws SQLException{
-        String oldPhone[] = new String[2];
-        int i;
-        pstmt=con.prepareStatement("Select PHONE.PHONE from PHONE where USERID = ?");
-        pstmt.execute();
-        for(i=0; i<2 && rs.next(); i++)
-            oldPhone[i]=rs.getString("PHONE");
-        
-        for(i=0; i < oldPhone.length; i++){
-        updateInTable(PHONE_TABLE);
-            pstmt=con.prepareStatement(sql);
-            pstmt.setString(1, newPhone[i]);
-            pstmt.setString(2, userID);
-            pstmt.setString(3, oldPhone[i]);
-        }
-        
-        //Test this part
-        int cntOld = oldPhone.length;
-        int cntNew = newPhone.length;
-        if(cntOld<cntNew){
-            while(cntOld < cntNew--)
-                addPhone(newPhone[i], userID);
-        }else if(cntOld>cntNew){
-            while(cntOld-- > cntNew)
-                deletePhone(oldPhone[i], userID);
-        }
+        deletePhone(userID);
+        for (String newPhone1 : newPhone)
+            addPhone(newPhone1, userID);
     }
     
     private void addPhone(String newPhone, String userID) throws SQLException{
         InsertIntoTable(PHONE_TABLE);       
         pstmt=con.prepareStatement(sql);
-        pstmt.setString(1, newPhone);
-        pstmt.setString(2, userID);
+        pstmt.setString(2, newPhone);
+        pstmt.setInt(1, Integer.parseInt(userID));
         pstmt.executeUpdate();
     }
     
@@ -745,9 +740,9 @@ public class DBInterface {
         try{
             updateInTable(COURSE_TABLE);
             pstmt=con.prepareStatement(sql);
-            pstmt.setString(1, c.courseID);
-            pstmt.setString(2, c.name);
-            pstmt.setString(3, c.description);
+            pstmt.setString(3, c.courseID);
+            pstmt.setString(1, c.name);
+            pstmt.setString(2, c.description);
             pstmt.executeUpdate(); 
             return true;
         }
@@ -841,7 +836,7 @@ public class DBInterface {
 	public Activity[] getActivitiesUsingCourseID(String courseID){
         Activity act[] = null;
         try {
-            act = new Activity[CountRecords("ACTIVITY"," Where CourseID = "+courseID)];
+            act = new Activity[CountRecords("ACTIVITY"," Where CourseID = '"+courseID+"'")];
             
             selectTable(ACTIVITY_TABLE);
             pstmt=con.prepareStatement(sql + " WHERE CourseID = ?");// 
@@ -892,7 +887,7 @@ public class DBInterface {
         selectTable(COURSE_TABLE);
         try {
             for(int i=0; i<g.length ; i++){ 
-                pstmt= con.prepareStatement(sql + " Where CoursesID = ?"); //Show Enrolled Courses Only
+                pstmt= con.prepareStatement(sql + " Where CourseID = ?"); //Show Enrolled Courses Only
                 pstmt.setString(1, g[i].CourseID);
                 rs = pstmt.executeQuery();
                 rs.next();
@@ -914,12 +909,12 @@ public class DBInterface {
         selectTable(INSTRUCTOR_TABLE);
         String InstID[] = null;
         try{
-            InstID = new String[CountRecords("INSTRUCTOR"," Where CourseID = "+CourseID)];
+            InstID = new String[CountRecords("INSTRUCTOR"," Where CourseID = '"+CourseID+"'")];
             
             pstmt= con.prepareStatement(sql + " Where CourseID = ?"); 
             pstmt.setString(1, CourseID);
             rs = pstmt.executeQuery();
-            for(int i=0; i<10 && rs.next(); i++){
+            for(int i=0; rs.next(); i++){
                 InstID[i] = String.valueOf(rs.getInt("INSTRUCTORID"));
             }
         }
@@ -936,15 +931,16 @@ public class DBInterface {
         Staff[] s = new Staff[ID.length];
         try {
             for(int i=0; i<ID.length; i++){
-                pstmt= con.prepareStatement(sql + " INNER JOIN USERS ON INSTRUCTOR.INSTRUCTORID = USERS.USERID Where USERID = ?"); 
+                pstmt= con.prepareStatement(sql + " INNER JOIN INSTRUCTOR ON INSTRUCTOR.INSTRUCTORID = USERS.USERID Where USERS.USERID = ?"); 
                 pstmt.setString(1, ID[i]);
                 rs = pstmt.executeQuery();
+                rs.next();
                 s[i]=new Staff(
                     rs.getString("UserID"), 
                     rs.getString("FName"), 
                     rs.getString("LNAME"),
                     rs.getDate("DATEOFBIRTH"), 
-                    rs.getString("GENDER"),
+                    checkGender(rs.getString("GENDER")),
                     rs.getString("Salary")
                     );
                 s[i].setPhone(getPhones(s[i].userID));
@@ -966,7 +962,7 @@ public class DBInterface {
             rs = pstmt.executeQuery();    
             rs.next();
             s.firstName = rs.getString("FNAME");
-            s.lastName =  rs.getString("LNAME ");
+            s.lastName =  rs.getString("LNAME");
         }
         catch (SQLException ex) {//Course Wasn't Found in Courses DataBase
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -984,16 +980,16 @@ public class DBInterface {
         try {
             s = new Student[CountRecords("Student"," INNER JOIN USERS ON STUDENT.STUDENTID = USERS.USERID")];
             selectTable(STUDENT_TABLE);
-            rs = stmt.executeQuery(" INNER JOIN USERS ON STUDENT.STUDENTID = USERS.USERID ");
+            rs = stmt.executeQuery(sql+" INNER JOIN USERS ON STUDENT.STUDENTID = USERS.USERID ");
             for(int i=0; rs.next(); i++){
                 s[i]=new Student(
-                String.valueOf(rs.getInt("ACADEMICYEAR")),
+                String.valueOf(rs.getInt("ACADIMICYEAR")),
                 String.valueOf(rs.getInt("CLASSNO")),
                 String.valueOf(rs.getInt("STUDENTID")),
                 rs.getString("FNAME"),
                 rs.getString("LNAME"),
                 rs.getDate("DATEOFBIRTH"),
-                rs.getString("GENDER"));
+                checkGender(rs.getString("GENDER")));
                 s[i].setPhone(getPhones(s[i].userID));
                 s[i].calc_age();
             }
@@ -1016,7 +1012,7 @@ public class DBInterface {
             inst = new Staff[CountRecords("INSTRUCTOR"," INNER JOIN USERS ON INSTRUCTOR.INSTRUCTORID = USERS.USERID ")];
             
             selectTable(INSTRUCTOR_TABLE);
-            rs = stmt.executeQuery(" INNER JOIN USERS ON INSTRUCTOR.INSTRUCTORID = USERS.USERID ");
+            rs = stmt.executeQuery(sql+" INNER JOIN USERS ON INSTRUCTOR.INSTRUCTORID = USERS.USERID ");
             for(int i=0; rs.next(); i++){               
                 inst[i] = new Staff(
                     rs.getString("CourseID"),
@@ -1025,7 +1021,7 @@ public class DBInterface {
                     rs.getString("FNAME"), 
                     rs.getString("LNAME"),
                     rs.getDate("DATEOFBIRTH"), 
-                    rs.getString("GENDER")
+                    checkGender(rs.getString("GENDER"))
                 );
                 inst[i].setPhone(getPhones(inst[i].userID));
                 inst[i].calc_age();
@@ -1042,16 +1038,16 @@ public class DBInterface {
     public Staff[] getAdmins(){
         Staff admins[] = null;
         try {
-            admins = new Staff[CountRecords("Users"," WHERE USERID BETWEEN 200000000 AND 299999999")];
+            admins = new Staff[CountRecords("Users"," WHERE USERID BETWEEN 100000000 AND 199999999")];
             selectTable(USERS_TABLE);//This is correct!
-            rs = stmt.executeQuery(sql + " WHERE USERID BETWEEN 200000000 AND 299999999");//inclusive
+            rs = stmt.executeQuery(sql + " WHERE USERID BETWEEN 100000000 AND 199999999");//inclusive
             for(int i=0; rs.next(); i++){
                 admins[i]=new Staff(
                     String.valueOf(rs.getInt("USERID")), 
                     rs.getString("FNAME"), 
                     rs.getString("LNAME"),
                     rs.getDate  ("DATEOFBIRTH"), 
-                    rs.getString("GENDER")
+                    checkGender(rs.getString("GENDER"))
                 );
                 admins[i].setPhone(getPhones(admins[i].userID));
                 admins[i].calc_age();
@@ -1119,7 +1115,11 @@ public class DBInterface {
         }
     }
     
-    
+    private String checkGender(String gender)
+    {
+        if(gender.equals("m")) return "Male";
+        else                   return "Female";
+    }
     public boolean getStudentInfo(Student s){//Can be used for searching, requires only ID
         try {
             selectTable(STUDENT_TABLE);
@@ -1130,15 +1130,16 @@ public class DBInterface {
             s.firstName   = rs.getString("FNAME");
             s.lastName    = rs.getString("LNAME");
             s.birthDate   = rs.getDate("DATEOFBIRTH");
-            s.gender      = rs.getString("GENDER");
-            //s.password    = rs.getString("password");
-            s.academicYear= String.valueOf(rs.getInt("ACADEMICYEAR"));
+            s.gender      = checkGender(rs.getString("GENDER"));
+            s.password    = rs.getString("password");
+            s.academicYear= String.valueOf(rs.getInt("ACADIMICYEAR"));
             s.classNo     = String.valueOf(rs.getInt("CLASSNO"));
             s.phone       = getPhones(s.userID);
             s.calc_age();
             return true;
         }
         catch (SQLException ex) {
+
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
@@ -1154,8 +1155,8 @@ public class DBInterface {
             stf.firstName   = rs.getString("FNAME");
             stf.lastName    = rs.getString("LNAME");
             stf.birthDate   = rs.getDate("DATEOFBIRTH");
-            stf.gender      = rs.getString("GENDER");
-            //stf.password    = rs.getString("password");
+            stf.gender      = checkGender(rs.getString("GENDER"));
+            stf.password    = rs.getString("password");
             stf.salary      = String.valueOf(rs.getInt("Salary"));
             stf.courseID    = rs.getString("CourseID");
             stf.phone       = getPhones(stf.userID);
@@ -1177,7 +1178,7 @@ public class DBInterface {
             stf.firstName   = rs.getString("FNAME");
             stf.lastName    = rs.getString("LNAME");
             stf.birthDate   = rs.getDate("DATEOFBIRTH");
-            stf.gender      = rs.getString("GENDER");
+            stf.gender      = checkGender(rs.getString("GENDER"));
             //stf.password    = rs.getString("password"); // << Should we not return this ??
             //stf.phone       = getPhones(stf.userID);
             stf.calc_age();
@@ -1243,7 +1244,7 @@ public class DBInterface {
     public Grades[] getGradesInfoUsingCourseID(String CourseID){
             Grades g[] = null;
             try {
-            g = new Grades[CountRecords("STUDIES"," WHERE COURSEID = "+CourseID)];
+            g = new Grades[CountRecords("STUDIES"," WHERE COURSEID = '"+CourseID+"'")];
             selectTable(STUDIES_TABLE);
             pstmt = con.prepareStatement(sql + " Where COURSEID = ?");
             pstmt.setString(1, CourseID);

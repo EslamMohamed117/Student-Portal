@@ -16,6 +16,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.util.StringTokenizer;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -158,6 +159,9 @@ public class Interface extends javax.swing.JFrame {
         studentprofileclassnoPanel = new javax.swing.JPanel();
         studentprofileclassnoLabel = new javax.swing.JLabel();
         studentprofileclassnoText = new javax.swing.JTextField();
+        studentprofilephone2Panel = new javax.swing.JPanel();
+        studentprofilephone2Label = new javax.swing.JLabel();
+        studentprofilephone2Text = new javax.swing.JTextField();
         coursesPanel = new javax.swing.JPanel();
         activityText2 = new javax.swing.JLabel();
         winControlPanel4 = new javax.swing.JPanel();
@@ -206,9 +210,6 @@ public class Interface extends javax.swing.JFrame {
         adminprofilenamePanel = new javax.swing.JPanel();
         adminprofilenameLabel = new javax.swing.JLabel();
         adminprofilenameText = new javax.swing.JTextField();
-        adminprofilesalaryPanel = new javax.swing.JPanel();
-        adminprofilesalaryLabel = new javax.swing.JLabel();
-        adminprofilesalaryText = new javax.swing.JTextField();
         adminprofilepasswordPanel = new javax.swing.JPanel();
         adminprofilepasswordLabel = new javax.swing.JLabel();
         adminprofilepasswordText = new javax.swing.JTextField();
@@ -252,24 +253,24 @@ public class Interface extends javax.swing.JFrame {
         adminaddphonestudentPanel = new javax.swing.JPanel();
         adminaddphonestudentLabel = new javax.swing.JLabel();
         adminaddphonestudentText = new javax.swing.JTextField();
+        adminaddphone2studentPanel = new javax.swing.JPanel();
+        adminaddphone2studentLabel = new javax.swing.JLabel();
+        adminaddphone2studentText = new javax.swing.JTextField();
         adminaddgenderstudentPanel = new javax.swing.JPanel();
         adminaddgenderstudentLabel = new javax.swing.JLabel();
         adminaddgenderstudentText = new javax.swing.JTextField();
-        adminaddagestudentPanel = new javax.swing.JPanel();
-        adminaddageestudentLabel = new javax.swing.JLabel();
-        adminaddagestudentText = new javax.swing.JTextField();
-        adminaddacadmicyearstudentPanel = new javax.swing.JPanel();
-        adminaddacadmicyearstudentLabel = new javax.swing.JLabel();
-        adminaddacadmicyearstudentText = new javax.swing.JTextField();
         adminaddbirthdatestudentPanel = new javax.swing.JPanel();
         adminaddbirthdatestudentLabel = new javax.swing.JLabel();
         adminaddbirthdatestudentText = new javax.swing.JTextField();
-        addStudentText = new javax.swing.JLabel();
-        adminsaveStudentButton1 = new javax.swing.JPanel();
-        adminsaveStudentButtonText1 = new javax.swing.JLabel();
+        adminaddacadmicyearstudentPanel = new javax.swing.JPanel();
+        adminaddacadmicyearstudentLabel = new javax.swing.JLabel();
+        adminaddacadmicyearstudentText = new javax.swing.JTextField();
         adminaddclassnostudentPanel = new javax.swing.JPanel();
         adminaddclassnostudentLabel = new javax.swing.JLabel();
         adminaddclassnostudentText = new javax.swing.JTextField();
+        addStudentText = new javax.swing.JLabel();
+        adminsaveStudentButton1 = new javax.swing.JPanel();
+        adminsaveStudentButtonText1 = new javax.swing.JLabel();
         adminModifyStudentPanel = new javax.swing.JPanel();
         winControlPanel18 = new javax.swing.JPanel();
         exitButton18 = new javax.swing.JLabel();
@@ -288,12 +289,12 @@ public class Interface extends javax.swing.JFrame {
         adminmodifyphonestudentPanel = new javax.swing.JPanel();
         adminmodifyphonestudentLabel = new javax.swing.JLabel();
         adminmodifyphonestudentText = new javax.swing.JTextField();
+        adminmodifyphone2studentPanel = new javax.swing.JPanel();
+        adminmodifyphone2studentLabel = new javax.swing.JLabel();
+        adminmodifyphone2studentText = new javax.swing.JTextField();
         adminmodifygenderstudentPanel = new javax.swing.JPanel();
         adminmodifygenderstudentLabel = new javax.swing.JLabel();
         adminmodifygenderstudentText = new javax.swing.JTextField();
-        adminmodifyagestudentPanel = new javax.swing.JPanel();
-        adminmodifyagestudentLabel = new javax.swing.JLabel();
-        adminmodifyagestudentText = new javax.swing.JTextField();
         adminmodifybirthdatestudentPanel = new javax.swing.JPanel();
         adminmodifybirthdatestudentLabel = new javax.swing.JLabel();
         adminmodifybirthdatestudentText = new javax.swing.JTextField();
@@ -329,12 +330,12 @@ public class Interface extends javax.swing.JFrame {
         adminmodifyphoneinstructorPanel = new javax.swing.JPanel();
         adminmodifyphoneinstructorLabel = new javax.swing.JLabel();
         adminmodifyphoneinstructorText = new javax.swing.JTextField();
+        adminmodifyphone2instructorPanel = new javax.swing.JPanel();
+        adminmodifyphone2instructorLabel = new javax.swing.JLabel();
+        adminmodifyphone2instructorText = new javax.swing.JTextField();
         adminmodifygenderinstructorPanel = new javax.swing.JPanel();
         adminmodifygenderinstructorLabel = new javax.swing.JLabel();
         adminmodifygenderinstructorText = new javax.swing.JTextField();
-        adminmodifyageinstructorPanel = new javax.swing.JPanel();
-        adminmodifyageinstructorLabel = new javax.swing.JLabel();
-        adminmodifyageinstructorText = new javax.swing.JTextField();
         adminmodifybirthdateinstructorPanel = new javax.swing.JPanel();
         adminmodifybirthdateinstructorLabel = new javax.swing.JLabel();
         adminmodifybirthdateinstructorText = new javax.swing.JTextField();
@@ -424,9 +425,6 @@ public class Interface extends javax.swing.JFrame {
         adminaddgenderinstructorPanel = new javax.swing.JPanel();
         adminaddgenderinstructorLabel = new javax.swing.JLabel();
         adminaddgenderinstructorText = new javax.swing.JTextField();
-        adminaddageinstructorPanel = new javax.swing.JPanel();
-        adminaddageinstructorLabel = new javax.swing.JLabel();
-        adminaddageinstructorText = new javax.swing.JTextField();
         adminaddsalaryinstructorPanel = new javax.swing.JPanel();
         adminaddsalaryinstructorLabel = new javax.swing.JLabel();
         adminaddsalaryinstructorText = new javax.swing.JTextField();
@@ -439,6 +437,9 @@ public class Interface extends javax.swing.JFrame {
         adminaddcoursecodeinstructorPanel = new javax.swing.JPanel();
         adminaddcoursecodeinstructorLabel = new javax.swing.JLabel();
         adminaddcoursecodeinstructorText = new javax.swing.JTextField();
+        adminaddphone2instructorPanel = new javax.swing.JPanel();
+        adminaddphone2instructorLabel = new javax.swing.JLabel();
+        adminaddphone2instructorText = new javax.swing.JTextField();
         adminDeletePanel = new javax.swing.JPanel();
         deleteDataPanel = new javax.swing.JPanel();
         deleteText = new javax.swing.JLabel();
@@ -1549,7 +1550,7 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(studentprofileclassnoPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(studentprofileclassnoLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(studentprofileclassnoText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1558,6 +1559,33 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(studentprofileclassnoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(studentprofileclassnoText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                 .addComponent(studentprofileclassnoLabel))
+        );
+
+        studentprofilephone2Label.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        studentprofilephone2Label.setText("Phone 2");
+
+        studentprofilephone2Text.setEditable(false);
+        studentprofilephone2Text.setBackground(new java.awt.Color(0, 0, 0, 1));
+        studentprofilephone2Text.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        studentprofilephone2Text.setForeground(new java.awt.Color(54, 33, 89));
+        studentprofilephone2Text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout studentprofilephone2PanelLayout = new javax.swing.GroupLayout(studentprofilephone2Panel);
+        studentprofilephone2Panel.setLayout(studentprofilephone2PanelLayout);
+        studentprofilephone2PanelLayout.setHorizontalGroup(
+            studentprofilephone2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentprofilephone2PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentprofilephone2Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(studentprofilephone2Text, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        studentprofilephone2PanelLayout.setVerticalGroup(
+            studentprofilephone2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentprofilephone2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(studentprofilephone2Text, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addComponent(studentprofilephone2Label))
         );
 
         javax.swing.GroupLayout profileDataPanelLayout = new javax.swing.GroupLayout(profileDataPanel);
@@ -1575,22 +1603,21 @@ public class Interface extends javax.swing.JFrame {
                             .addGap(54, 54, 54)
                             .addComponent(jLabel1))
                         .addGroup(profileDataPanelLayout.createSequentialGroup()
-                            .addGap(53, 53, 53)
-                            .addGroup(profileDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(studentprofilenamePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(studentprofileidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(studentprofilephonePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(studentprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(studentprofilegenderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(studentprofileacadmicyearPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(profileDataPanelLayout.createSequentialGroup()
                             .addGap(36, 36, 36)
                             .addGroup(profileDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(studenteditprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(basicinfoStart, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profileDataPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(studentprofileclassnoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(profileDataPanelLayout.createSequentialGroup()
+                            .addGap(53, 53, 53)
+                            .addGroup(profileDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(studentprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(studentprofilegenderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(studentprofileacadmicyearPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(studentprofileclassnoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(studentprofilephone2Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(studentprofilephonePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(studentprofilenamePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(studentprofileidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGap(194, 194, 194))
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profileDataPanelLayout.createSequentialGroup()
                     .addGroup(profileDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1614,6 +1641,8 @@ public class Interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(studentprofilephonePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentprofilephone2Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(studentprofilepasswordPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(studentprofilegenderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1621,7 +1650,7 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(studentprofileacadmicyearPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(studentprofileclassnoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(29, 29, 29)
                 .addComponent(studentsaveprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(profileDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2059,14 +2088,14 @@ public class Interface extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Activity ID", "Admin ID", "Date", "Describtion"
+                "Admin ID", "Date", "Describtion"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -2084,10 +2113,11 @@ public class Interface extends javax.swing.JFrame {
         adminactivityTable.getTableHeader().setReorderingAllowed(false);
         adminactivityScroll.setViewportView(adminactivityTable);
         if (adminactivityTable.getColumnModel().getColumnCount() > 0) {
-            adminactivityTable.getColumnModel().getColumn(0).setResizable(false);
-            adminactivityTable.getColumnModel().getColumn(1).setResizable(false);
+            adminactivityTable.getColumnModel().getColumn(0).setMinWidth(125);
+            adminactivityTable.getColumnModel().getColumn(0).setMaxWidth(125);
+            adminactivityTable.getColumnModel().getColumn(1).setMinWidth(125);
+            adminactivityTable.getColumnModel().getColumn(1).setMaxWidth(125);
             adminactivityTable.getColumnModel().getColumn(2).setResizable(false);
-            adminactivityTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
         adminactivityText.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
@@ -2097,7 +2127,7 @@ public class Interface extends javax.swing.JFrame {
         adminactivityPanel.setLayout(adminactivityPanelLayout);
         adminactivityPanelLayout.setHorizontalGroup(
             adminactivityPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(adminactivityScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+            .addComponent(adminactivityScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminactivityPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(adminactivityText)
@@ -2208,33 +2238,6 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(adminprofilenamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(adminprofilenameText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                 .addComponent(adminprofilenameLabel))
-        );
-
-        adminprofilesalaryLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminprofilesalaryLabel.setText("Salary");
-
-        adminprofilesalaryText.setEditable(false);
-        adminprofilesalaryText.setBackground(new java.awt.Color(0, 0, 0, 1));
-        adminprofilesalaryText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        adminprofilesalaryText.setForeground(new java.awt.Color(54, 33, 89));
-        adminprofilesalaryText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout adminprofilesalaryPanelLayout = new javax.swing.GroupLayout(adminprofilesalaryPanel);
-        adminprofilesalaryPanel.setLayout(adminprofilesalaryPanelLayout);
-        adminprofilesalaryPanelLayout.setHorizontalGroup(
-            adminprofilesalaryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminprofilesalaryPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adminprofilesalaryLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(adminprofilesalaryText, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        adminprofilesalaryPanelLayout.setVerticalGroup(
-            adminprofilesalaryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminprofilesalaryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminprofilesalaryText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addComponent(adminprofilesalaryLabel))
         );
 
         adminprofilepasswordLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -2373,7 +2376,6 @@ public class Interface extends javax.swing.JFrame {
                         .addGroup(profileDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(adminprofilenamePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminprofileidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminprofilesalaryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminprofilepasswordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(profileDataPanel1Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
@@ -2405,10 +2407,8 @@ public class Interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminprofilenamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adminprofilesalaryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminprofilepasswordPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addGroup(profileDataPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profileDataPanel1Layout.createSequentialGroup()
                         .addComponent(adminsaveprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2476,7 +2476,7 @@ public class Interface extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Name", "Phone", "Department", "Academic year", "Class"
+                "ID", "Name", "Phone", "Phone 2", "Academic year", "Class"
             }
         ) {
             Class[] types = new Class [] {
@@ -2577,14 +2577,14 @@ public class Interface extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Name", "Phone", "Course", "Salary"
+                "ID", "Name", "Phone", "Phone 2", "Course", "Salary"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -2607,6 +2607,7 @@ public class Interface extends javax.swing.JFrame {
             admininstructorslistTable.getColumnModel().getColumn(2).setResizable(false);
             admininstructorslistTable.getColumnModel().getColumn(3).setResizable(false);
             admininstructorslistTable.getColumnModel().getColumn(4).setResizable(false);
+            admininstructorslistTable.getColumnModel().getColumn(5).setResizable(false);
         }
 
         instructorslistText.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
@@ -2820,23 +2821,13 @@ public class Interface extends javax.swing.JFrame {
         adminaddphonestudentText.setForeground(new java.awt.Color(54, 33, 89));
         adminaddphonestudentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout adminaddphonestudentPanelLayout = new javax.swing.GroupLayout(adminaddphonestudentPanel);
-        adminaddphonestudentPanel.setLayout(adminaddphonestudentPanelLayout);
-        adminaddphonestudentPanelLayout.setHorizontalGroup(
-            adminaddphonestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddphonestudentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adminaddphonestudentLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(adminaddphonestudentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        adminaddphonestudentPanelLayout.setVerticalGroup(
-            adminaddphonestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddphonestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminaddphonestudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addComponent(adminaddphonestudentLabel))
-        );
+        adminaddphone2studentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        adminaddphone2studentLabel.setText("Phone 2");
+
+        adminaddphone2studentText.setBackground(new java.awt.Color(0, 0, 0, 1));
+        adminaddphone2studentText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        adminaddphone2studentText.setForeground(new java.awt.Color(54, 33, 89));
+        adminaddphone2studentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         adminaddgenderstudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         adminaddgenderstudentLabel.setText("Gender");
@@ -2862,62 +2853,6 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(adminaddgenderstudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(adminaddgenderstudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                 .addComponent(adminaddgenderstudentLabel))
-        );
-
-        adminaddageestudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminaddageestudentLabel.setText("Age");
-
-        adminaddagestudentText.setBackground(new java.awt.Color(0, 0, 0, 1));
-        adminaddagestudentText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        adminaddagestudentText.setForeground(new java.awt.Color(54, 33, 89));
-        adminaddagestudentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        adminaddagestudentText.setDisabledTextColor(new java.awt.Color(54, 33, 89));
-        adminaddagestudentText.setSelectedTextColor(new java.awt.Color(240, 240, 240));
-
-        javax.swing.GroupLayout adminaddagestudentPanelLayout = new javax.swing.GroupLayout(adminaddagestudentPanel);
-        adminaddagestudentPanel.setLayout(adminaddagestudentPanelLayout);
-        adminaddagestudentPanelLayout.setHorizontalGroup(
-            adminaddagestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddagestudentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adminaddageestudentLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(adminaddagestudentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        adminaddagestudentPanelLayout.setVerticalGroup(
-            adminaddagestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddagestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminaddagestudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addComponent(adminaddageestudentLabel))
-        );
-
-        adminaddacadmicyearstudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminaddacadmicyearstudentLabel.setText("Acadmic Year");
-
-        adminaddacadmicyearstudentText.setBackground(new java.awt.Color(0, 0, 0, 1));
-        adminaddacadmicyearstudentText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        adminaddacadmicyearstudentText.setForeground(new java.awt.Color(54, 33, 89));
-        adminaddacadmicyearstudentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        adminaddacadmicyearstudentText.setDisabledTextColor(new java.awt.Color(54, 33, 89));
-        adminaddacadmicyearstudentText.setSelectedTextColor(new java.awt.Color(240, 240, 240));
-
-        javax.swing.GroupLayout adminaddacadmicyearstudentPanelLayout = new javax.swing.GroupLayout(adminaddacadmicyearstudentPanel);
-        adminaddacadmicyearstudentPanel.setLayout(adminaddacadmicyearstudentPanelLayout);
-        adminaddacadmicyearstudentPanelLayout.setHorizontalGroup(
-            adminaddacadmicyearstudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddacadmicyearstudentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adminaddacadmicyearstudentLabel)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(adminaddacadmicyearstudentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        adminaddacadmicyearstudentPanelLayout.setVerticalGroup(
-            adminaddacadmicyearstudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddacadmicyearstudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminaddacadmicyearstudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addComponent(adminaddacadmicyearstudentLabel))
         );
 
         adminaddbirthdatestudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -2948,6 +2883,117 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(adminaddbirthdatestudentLabel)
                     .addComponent(adminaddbirthdatestudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        adminaddacadmicyearstudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        adminaddacadmicyearstudentLabel.setText("Acadmic Year");
+
+        adminaddacadmicyearstudentText.setBackground(new java.awt.Color(0, 0, 0, 1));
+        adminaddacadmicyearstudentText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        adminaddacadmicyearstudentText.setForeground(new java.awt.Color(54, 33, 89));
+        adminaddacadmicyearstudentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        adminaddacadmicyearstudentText.setDisabledTextColor(new java.awt.Color(54, 33, 89));
+        adminaddacadmicyearstudentText.setSelectedTextColor(new java.awt.Color(240, 240, 240));
+
+        javax.swing.GroupLayout adminaddacadmicyearstudentPanelLayout = new javax.swing.GroupLayout(adminaddacadmicyearstudentPanel);
+        adminaddacadmicyearstudentPanel.setLayout(adminaddacadmicyearstudentPanelLayout);
+        adminaddacadmicyearstudentPanelLayout.setHorizontalGroup(
+            adminaddacadmicyearstudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddacadmicyearstudentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminaddacadmicyearstudentLabel)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(adminaddacadmicyearstudentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        adminaddacadmicyearstudentPanelLayout.setVerticalGroup(
+            adminaddacadmicyearstudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddacadmicyearstudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(adminaddacadmicyearstudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addComponent(adminaddacadmicyearstudentLabel))
+        );
+
+        adminaddclassnostudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        adminaddclassnostudentLabel.setText("Class No.");
+
+        adminaddclassnostudentText.setBackground(new java.awt.Color(0, 0, 0, 1));
+        adminaddclassnostudentText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        adminaddclassnostudentText.setForeground(new java.awt.Color(54, 33, 89));
+        adminaddclassnostudentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        adminaddclassnostudentText.setDisabledTextColor(new java.awt.Color(54, 33, 89));
+        adminaddclassnostudentText.setSelectedTextColor(new java.awt.Color(240, 240, 240));
+
+        javax.swing.GroupLayout adminaddclassnostudentPanelLayout = new javax.swing.GroupLayout(adminaddclassnostudentPanel);
+        adminaddclassnostudentPanel.setLayout(adminaddclassnostudentPanelLayout);
+        adminaddclassnostudentPanelLayout.setHorizontalGroup(
+            adminaddclassnostudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddclassnostudentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminaddclassnostudentLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminaddclassnostudentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        adminaddclassnostudentPanelLayout.setVerticalGroup(
+            adminaddclassnostudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddclassnostudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(adminaddclassnostudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addComponent(adminaddclassnostudentLabel))
+        );
+
+        javax.swing.GroupLayout adminaddphone2studentPanelLayout = new javax.swing.GroupLayout(adminaddphone2studentPanel);
+        adminaddphone2studentPanel.setLayout(adminaddphone2studentPanelLayout);
+        adminaddphone2studentPanelLayout.setHorizontalGroup(
+            adminaddphone2studentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddphone2studentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminaddphone2studentLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminaddphone2studentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addComponent(adminaddbirthdatestudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(adminaddacadmicyearstudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(adminaddclassnostudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(adminaddgenderstudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminaddphone2studentPanelLayout.setVerticalGroup(
+            adminaddphone2studentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddphone2studentPanelLayout.createSequentialGroup()
+                .addGroup(adminaddphone2studentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adminaddphone2studentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(adminaddphone2studentLabel))
+                .addGap(0, 0, 0)
+                .addComponent(adminaddgenderstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminaddbirthdatestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminaddacadmicyearstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminaddclassnostudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
+        );
+
+        javax.swing.GroupLayout adminaddphonestudentPanelLayout = new javax.swing.GroupLayout(adminaddphonestudentPanel);
+        adminaddphonestudentPanel.setLayout(adminaddphonestudentPanelLayout);
+        adminaddphonestudentPanelLayout.setHorizontalGroup(
+            adminaddphonestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddphonestudentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminaddphonestudentLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminaddphonestudentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addComponent(adminaddphone2studentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminaddphonestudentPanelLayout.setVerticalGroup(
+            adminaddphonestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddphonestudentPanelLayout.createSequentialGroup()
+                .addGroup(adminaddphonestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adminaddphonestudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(adminaddphonestudentLabel))
+                .addGap(0, 0, 0)
+                .addComponent(adminaddphone2studentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         addStudentText.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
@@ -2983,34 +3029,6 @@ public class Interface extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        adminaddclassnostudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminaddclassnostudentLabel.setText("Class No.");
-
-        adminaddclassnostudentText.setBackground(new java.awt.Color(0, 0, 0, 1));
-        adminaddclassnostudentText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        adminaddclassnostudentText.setForeground(new java.awt.Color(54, 33, 89));
-        adminaddclassnostudentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        adminaddclassnostudentText.setDisabledTextColor(new java.awt.Color(54, 33, 89));
-        adminaddclassnostudentText.setSelectedTextColor(new java.awt.Color(240, 240, 240));
-
-        javax.swing.GroupLayout adminaddclassnostudentPanelLayout = new javax.swing.GroupLayout(adminaddclassnostudentPanel);
-        adminaddclassnostudentPanel.setLayout(adminaddclassnostudentPanelLayout);
-        adminaddclassnostudentPanelLayout.setHorizontalGroup(
-            adminaddclassnostudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddclassnostudentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adminaddclassnostudentLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(adminaddclassnostudentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        adminaddclassnostudentPanelLayout.setVerticalGroup(
-            adminaddclassnostudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddclassnostudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminaddclassnostudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addComponent(adminaddclassnostudentLabel))
-        );
-
         javax.swing.GroupLayout addStudentDataPanelLayout = new javax.swing.GroupLayout(addStudentDataPanel);
         addStudentDataPanel.setLayout(addStudentDataPanelLayout);
         addStudentDataPanelLayout.setHorizontalGroup(
@@ -3038,12 +3056,7 @@ public class Interface extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(adminaddnamestudentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminaddidstudentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminaddagestudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminaddbirthdatestudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminaddacadmicyearstudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminaddclassnostudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminaddphonestudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminaddgenderstudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(adminaddphonestudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(195, 195, 195))
         );
         addStudentDataPanelLayout.setVerticalGroup(
@@ -3061,19 +3074,9 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(adminaddidstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(adminaddphonestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(adminaddgenderstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(adminaddagestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(adminaddbirthdatestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(adminaddacadmicyearstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(adminaddclassnostudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(adminsaveStudentButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout adminAddStudentPanelLayout = new javax.swing.GroupLayout(adminAddStudentPanel);
@@ -3249,6 +3252,34 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(adminmodifyphonestudentLabel))
         );
 
+        adminmodifyphone2studentPanel.setVisible(false);
+
+        adminmodifyphone2studentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        adminmodifyphone2studentLabel.setText("Phone 2");
+
+        adminmodifyphone2studentText.setBackground(new java.awt.Color(0, 0, 0, 1));
+        adminmodifyphone2studentText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        adminmodifyphone2studentText.setForeground(new java.awt.Color(54, 33, 89));
+        adminmodifyphone2studentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout adminmodifyphone2studentPanelLayout = new javax.swing.GroupLayout(adminmodifyphone2studentPanel);
+        adminmodifyphone2studentPanel.setLayout(adminmodifyphone2studentPanelLayout);
+        adminmodifyphone2studentPanelLayout.setHorizontalGroup(
+            adminmodifyphone2studentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminmodifyphone2studentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminmodifyphone2studentLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminmodifyphone2studentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        adminmodifyphone2studentPanelLayout.setVerticalGroup(
+            adminmodifyphone2studentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminmodifyphone2studentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(adminmodifyphone2studentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addComponent(adminmodifyphone2studentLabel))
+        );
+
         adminmodifygenderstudentPanel.setVisible(false);
 
         adminmodifygenderstudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -3275,36 +3306,6 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(adminmodifygenderstudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(adminmodifygenderstudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                 .addComponent(adminmodifygenderstudentLabel))
-        );
-
-        adminmodifyagestudentPanel.setVisible(false);
-
-        adminmodifyagestudentLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminmodifyagestudentLabel.setText("Age");
-
-        adminmodifyagestudentText.setBackground(new java.awt.Color(0, 0, 0, 1));
-        adminmodifyagestudentText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        adminmodifyagestudentText.setForeground(new java.awt.Color(54, 33, 89));
-        adminmodifyagestudentText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        adminmodifyagestudentText.setDisabledTextColor(new java.awt.Color(54, 33, 89));
-        adminmodifyagestudentText.setSelectedTextColor(new java.awt.Color(240, 240, 240));
-
-        javax.swing.GroupLayout adminmodifyagestudentPanelLayout = new javax.swing.GroupLayout(adminmodifyagestudentPanel);
-        adminmodifyagestudentPanel.setLayout(adminmodifyagestudentPanelLayout);
-        adminmodifyagestudentPanelLayout.setHorizontalGroup(
-            adminmodifyagestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminmodifyagestudentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adminmodifyagestudentLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(adminmodifyagestudentText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        adminmodifyagestudentPanelLayout.setVerticalGroup(
-            adminmodifyagestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminmodifyagestudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminmodifyagestudentText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addComponent(adminmodifyagestudentLabel))
         );
 
         adminmodifybirthdatestudentPanel.setVisible(false);
@@ -3478,10 +3479,10 @@ public class Interface extends javax.swing.JFrame {
                             .addComponent(adminmodifypasswordstudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminmodifyphonestudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminmodifygenderstudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminmodifyagestudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminmodifybirthdatestudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminmodifyacadmicyearstudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminmodifyclassnostudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(adminmodifyclassnostudentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(adminmodifyphone2studentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModifyStudentDataPanelLayout.createSequentialGroup()
                 .addContainerGap(166, Short.MAX_VALUE)
@@ -3498,34 +3499,31 @@ public class Interface extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(modifyStudentText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addGap(12, 12, 12)
+                .addComponent(basicinfoStart5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adminmodifyidstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminmodifynamestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminmodifypasswordstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminmodifyphonestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminmodifyphone2studentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminmodifygenderstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminmodifybirthdatestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminmodifyacadmicyearstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(adminmodifyclassnostudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(ModifyStudentDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ModifyStudentDataPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(12, 12, 12)
-                        .addComponent(basicinfoStart5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(adminmodifyidstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(adminmodifynamestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(adminmodifypasswordstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(adminmodifyphonestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(adminmodifygenderstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(adminmodifyagestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(adminmodifybirthdatestudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(adminmodifyacadmicyearstudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(adminmodifyclassnostudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addComponent(adminmodifyselectstudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(ModifyStudentDataPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(adminsaveStudentButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(adminmodifyselectstudentButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminsaveStudentButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
         );
 
@@ -3731,6 +3729,34 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(adminmodifyphoneinstructorLabel))
         );
 
+        adminmodifyphone2instructorPanel.setVisible(false);
+
+        adminmodifyphone2instructorLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        adminmodifyphone2instructorLabel.setText("Phone 2");
+
+        adminmodifyphone2instructorText.setBackground(new java.awt.Color(0, 0, 0, 1));
+        adminmodifyphone2instructorText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        adminmodifyphone2instructorText.setForeground(new java.awt.Color(54, 33, 89));
+        adminmodifyphone2instructorText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout adminmodifyphone2instructorPanelLayout = new javax.swing.GroupLayout(adminmodifyphone2instructorPanel);
+        adminmodifyphone2instructorPanel.setLayout(adminmodifyphone2instructorPanelLayout);
+        adminmodifyphone2instructorPanelLayout.setHorizontalGroup(
+            adminmodifyphone2instructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminmodifyphone2instructorPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminmodifyphone2instructorLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminmodifyphone2instructorText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        adminmodifyphone2instructorPanelLayout.setVerticalGroup(
+            adminmodifyphone2instructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminmodifyphone2instructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(adminmodifyphone2instructorText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addComponent(adminmodifyphone2instructorLabel))
+        );
+
         adminmodifygenderinstructorPanel.setVisible(false);
 
         adminmodifygenderinstructorLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -3757,36 +3783,6 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(adminmodifygenderinstructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(adminmodifygenderinstructorText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                 .addComponent(adminmodifygenderinstructorLabel))
-        );
-
-        adminmodifyageinstructorPanel.setVisible(false);
-
-        adminmodifyageinstructorLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminmodifyageinstructorLabel.setText("Age");
-
-        adminmodifyageinstructorText.setBackground(new java.awt.Color(0, 0, 0, 1));
-        adminmodifyageinstructorText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        adminmodifyageinstructorText.setForeground(new java.awt.Color(54, 33, 89));
-        adminmodifyageinstructorText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        adminmodifyageinstructorText.setDisabledTextColor(new java.awt.Color(54, 33, 89));
-        adminmodifyageinstructorText.setSelectedTextColor(new java.awt.Color(240, 240, 240));
-
-        javax.swing.GroupLayout adminmodifyageinstructorPanelLayout = new javax.swing.GroupLayout(adminmodifyageinstructorPanel);
-        adminmodifyageinstructorPanel.setLayout(adminmodifyageinstructorPanelLayout);
-        adminmodifyageinstructorPanelLayout.setHorizontalGroup(
-            adminmodifyageinstructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminmodifyageinstructorPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adminmodifyageinstructorLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(adminmodifyageinstructorText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        adminmodifyageinstructorPanelLayout.setVerticalGroup(
-            adminmodifyageinstructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminmodifyageinstructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminmodifyageinstructorText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addComponent(adminmodifyageinstructorLabel))
         );
 
         adminmodifybirthdateinstructorPanel.setVisible(false);
@@ -3923,28 +3919,29 @@ public class Interface extends javax.swing.JFrame {
                     .addGroup(modifyInstructorDataPanelLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(modifyInstructorDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(basicinfoStart6, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(modifyInstructorDataPanelLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(modifyInstructorDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(modifyInstructorDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(modifyInstructorDataPanelLayout.createSequentialGroup()
+                                            .addGap(0, 0, Short.MAX_VALUE)
+                                            .addComponent(modifyInstructorText))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, modifyInstructorDataPanelLayout.createSequentialGroup()
+                                            .addComponent(adminmodifyselectinstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(adminsaveInstructorButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(modifyInstructorDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(adminmodifyidinstructorPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(adminmodifynameinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(adminmodifypasswordinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(adminmodifyphoneinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(adminmodifygenderinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(adminmodifyageinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(adminmodifybirthdateinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(adminmodifycoursecodeinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(adminmodifysalaryinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(adminmodifyselectinstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(basicinfoStart6, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(adminmodifysalaryinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(adminmodifyphone2instructorPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                 .addContainerGap(135, Short.MAX_VALUE))
-            .addGroup(modifyInstructorDataPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(modifyInstructorDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(adminsaveInstructorButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(modifyInstructorText))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         modifyInstructorDataPanelLayout.setVerticalGroup(
             modifyInstructorDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3964,20 +3961,20 @@ public class Interface extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(adminmodifyphoneinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(adminmodifygenderinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminmodifyphone2instructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(adminmodifyageinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminmodifygenderinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(adminmodifybirthdateinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(adminmodifycoursecodeinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(adminmodifysalaryinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(modifyInstructorDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(adminmodifyselectinstructorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminsaveInstructorButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout adminModifyInstructorPanelLayout = new javax.swing.GroupLayout(adminModifyInstructorPanel);
@@ -4947,34 +4944,6 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(adminaddgenderinstructorLabel))
         );
 
-        adminaddageinstructorLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        adminaddageinstructorLabel.setText("Age");
-
-        adminaddageinstructorText.setBackground(new java.awt.Color(0, 0, 0, 1));
-        adminaddageinstructorText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        adminaddageinstructorText.setForeground(new java.awt.Color(54, 33, 89));
-        adminaddageinstructorText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        adminaddageinstructorText.setDisabledTextColor(new java.awt.Color(54, 33, 89));
-        adminaddageinstructorText.setSelectedTextColor(new java.awt.Color(240, 240, 240));
-
-        javax.swing.GroupLayout adminaddageinstructorPanelLayout = new javax.swing.GroupLayout(adminaddageinstructorPanel);
-        adminaddageinstructorPanel.setLayout(adminaddageinstructorPanelLayout);
-        adminaddageinstructorPanelLayout.setHorizontalGroup(
-            adminaddageinstructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddageinstructorPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adminaddageinstructorLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(adminaddageinstructorText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        adminaddageinstructorPanelLayout.setVerticalGroup(
-            adminaddageinstructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adminaddageinstructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminaddageinstructorText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addComponent(adminaddageinstructorLabel))
-        );
-
         adminaddsalaryinstructorLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         adminaddsalaryinstructorLabel.setText("Salary");
 
@@ -5094,6 +5063,32 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(adminaddcoursecodeinstructorLabel))
         );
 
+        adminaddphone2instructorLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        adminaddphone2instructorLabel.setText("Phone 2");
+
+        adminaddphone2instructorText.setBackground(new java.awt.Color(0, 0, 0, 1));
+        adminaddphone2instructorText.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        adminaddphone2instructorText.setForeground(new java.awt.Color(54, 33, 89));
+        adminaddphone2instructorText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout adminaddphone2instructorPanelLayout = new javax.swing.GroupLayout(adminaddphone2instructorPanel);
+        adminaddphone2instructorPanel.setLayout(adminaddphone2instructorPanelLayout);
+        adminaddphone2instructorPanelLayout.setHorizontalGroup(
+            adminaddphone2instructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddphone2instructorPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminaddphone2instructorLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminaddphone2instructorText, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        adminaddphone2instructorPanelLayout.setVerticalGroup(
+            adminaddphone2instructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminaddphone2instructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(adminaddphone2instructorText, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addComponent(adminaddphone2instructorLabel))
+        );
+
         javax.swing.GroupLayout addInstructorDataPanelLayout = new javax.swing.GroupLayout(addInstructorDataPanel);
         addInstructorDataPanel.setLayout(addInstructorDataPanelLayout);
         addInstructorDataPanelLayout.setHorizontalGroup(
@@ -5121,12 +5116,12 @@ public class Interface extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(adminaddnameinstructorPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminaddpasswordinstructorPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminaddageinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminaddbirthdateinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminaddsalaryinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminaddcoursecodeinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adminaddphoneinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adminaddgenderinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(adminaddgenderinstructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(adminaddphone2instructorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(195, 195, 195))
         );
         addInstructorDataPanelLayout.setVerticalGroup(
@@ -5145,18 +5140,18 @@ public class Interface extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(adminaddphoneinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(adminaddgenderinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminaddphone2instructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(adminaddageinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminaddgenderinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(adminaddbirthdateinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(adminaddsalaryinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(adminaddcoursecodeinstructorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addComponent(adminsaveStudentButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout adminAddInstructorPanelLayout = new javax.swing.GroupLayout(adminAddInstructorPanel);
@@ -5174,7 +5169,7 @@ public class Interface extends javax.swing.JFrame {
                 .addGroup(adminAddInstructorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminAddInstructorPanelLayout.createSequentialGroup()
                         .addComponent(winControlPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 732, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(addInstructorDataPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
@@ -6296,14 +6291,14 @@ public class Interface extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Student ID", "Name", "Phone", "Academic year", "Class No.", "Grades"
+                "Student ID", "Name", "Phone", "Phone 2", "Academic year", "Class No.", "Grades"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -6326,12 +6321,18 @@ public class Interface extends javax.swing.JFrame {
         });
         instructorcoursestudentslistScroll.setViewportView(instructorcoursestudentslistTable);
         if (instructorcoursestudentslistTable.getColumnModel().getColumnCount() > 0) {
-            instructorcoursestudentslistTable.getColumnModel().getColumn(0).setResizable(false);
-            instructorcoursestudentslistTable.getColumnModel().getColumn(1).setResizable(false);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(0).setMinWidth(125);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(0).setMaxWidth(125);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(1).setMinWidth(175);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(1).setMaxWidth(175);
             instructorcoursestudentslistTable.getColumnModel().getColumn(2).setResizable(false);
             instructorcoursestudentslistTable.getColumnModel().getColumn(3).setResizable(false);
-            instructorcoursestudentslistTable.getColumnModel().getColumn(4).setResizable(false);
-            instructorcoursestudentslistTable.getColumnModel().getColumn(5).setResizable(false);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(4).setMinWidth(100);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(4).setMaxWidth(100);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(5).setMinWidth(75);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(5).setMaxWidth(75);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(6).setMinWidth(50);
+            instructorcoursestudentslistTable.getColumnModel().getColumn(6).setMaxWidth(50);
         }
 
         instructorcoursestudentslistPanelText.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
@@ -7353,6 +7354,11 @@ public class Interface extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)table.getModel();
         model.addRow(dataRow);
     }
+    private void reloadPhonesBox(JComboBox box, User user)
+    {
+        for(int i =0;i<user.phone.length;i++)
+            box.addItem(user.phone[i]);
+    }
     private void reloadInstructorActivityTable()
     {
         DefaultTableModel model = (DefaultTableModel) instructoractivitylistTable.getModel();
@@ -7360,7 +7366,7 @@ public class Interface extends javax.swing.JFrame {
         try
         {
             Activity[] list = Activity.getActivitiesUsingCourseID(staff.courseID);
-            for(int i = 0; i<list.length &&list[i] != null ; i++) 
+            for(int i = 0; i<list.length ; i++) 
             {   
                 Staff instructor = Staff.getInstructorName(list[i].instructorID);
                 AddRowToJTable(new Object[]{
@@ -7377,7 +7383,7 @@ public class Interface extends javax.swing.JFrame {
         try
         {
             Activity[] list = Activity.getActivities(student.userID);
-            for(int i = 0; i<list.length &&list[i] != null ; i++) 
+            for(int i = 0; i<list.length ; i++) 
             {   
                 Staff instructor = Staff.getInstructorName(list[i].instructorID);
                 Course cors = new Course(list[i].courseID);
@@ -7395,7 +7401,7 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try{
         History[] list = History.getAdminHistory();
-        for(int i = 0; i<list.length && list[i] != null ; i++) 
+        for(int i = 0; i<list.length ; i++) 
             AddRowToJTable(new Object[]{
                 list[i].adminID,list[i].modificationdate,list[i].description
                     },adminactivityTable);
@@ -7408,12 +7414,19 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try{
         Course[] list = Course.getCourses(student.userID);
-        for(int i = 0; list[i]!=null ; i++) 
+        String instructorName;
+        for(int i = 0; i<list.length ; i++) 
         {
             Grades grade = new Grades(student.userID,list[i].courseID);
             grade.fillGradesInfo();
-                        AddRowToJTable(new Object[]{
-                                           list[i].courseID,list[i].name,Staff.getInstructors(list[i].courseID)[0].firstName+" "+Staff.getInstructors(list[i].courseID)[0].lastName,list[i].description,grade.grade
+            
+            Staff[] instructor = Staff.getInstructors(list[i].courseID);
+            
+            if(instructor.length == 0)  instructorName = "No Instructor";
+            else    instructorName = instructor[0].firstName+" "+instructor[0].lastName;
+            
+            AddRowToJTable(new Object[]{
+                                           list[i].courseID,list[i].name,instructorName,list[i].description,grade.grade
                                            },coursesTable);
         }
         }
@@ -7433,12 +7446,12 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try{
         Grades[] list = Grades.getGradesUsingCourseID(staff.courseID);
-        for(int i = 0; list[i]!=null ; i++) 
+        for(int i = 0; i<list.length ; i++) 
         {
             student = new Student(list[i].StudentID);
             student.fillstudentInfo();
                         AddRowToJTable(new Object[]{
-                                           list[i].StudentID,student.firstName+" "+student.lastName,student.phone,student.academicYear,student.classNo,list[i].grade
+                                           list[i].StudentID,student.firstName+" "+student.lastName,student.phone[0],student.phone[1],student.academicYear,student.classNo,list[i].grade
                                            },instructorcoursestudentslistTable);
         }
         }
@@ -7450,9 +7463,9 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try{
         Student[] list = Student.getStudents();
-        for(int i = 0; list[i]!=null ; i++) 
+        for(int i = 0; i<list.length ; i++) 
                         AddRowToJTable(new Object[]{
-                                           list[i].userID,list[i].firstName+" "+list[i].lastName,list[i].phone,list[i].academicYear,list[i].classNo
+                                           list[i].userID,list[i].firstName+" "+list[i].lastName,list[i].phone[0],list[i].phone[1],list[i].academicYear,list[i].classNo
                                            },adminstudentslistTable);
         }
         catch(NullPointerException e){}
@@ -7463,9 +7476,9 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try{
         Staff[] list = Staff.getInstructors();
-        for(int i = 0; list[i]!=null ; i++) 
+        for(int i = 0; i<list.length ; i++) 
                         AddRowToJTable(new Object[]{
-                                           list[i].userID,list[i].firstName+" "+list[i].lastName,list[i].phone,list[i].courseID,list[i].salary
+                                           list[i].userID,list[i].firstName+" "+list[i].lastName,list[i].phone[0],list[i].phone[1],list[i].courseID,list[i].salary
                                            },admininstructorslistTable);
         }
         catch(NullPointerException e){}
@@ -7476,19 +7489,15 @@ public class Interface extends javax.swing.JFrame {
         model.setRowCount(0);
         try{
         Course[] list = Course.getCourses();
-        for(int i = 0; i<list.length && list[i]!=null ; i++)  // why i<5 not just list[i]!=null
-        {            
-         //System.out.println(list[i].courseID+list[i].name+ list[i].description+" "+Staff.getStaff(list[i].courseID)[0].FirstName+" "+Staff.getStaff(list[i].courseID)[0].LastName+" ");
-            if(Staff.getInstructors(list[i].courseID)[0]==null)
-            {
-                AddRowToJTable(new Object[]{
-                                           list[i].courseID,list[i].name,"No instructor",list[i].description
-                                           },admincourseslistTable);
-                continue;
-            }
-       
+        String instructorName;
+        for(int i = 0; i<list.length ; i++)  // why i<5 not just list[i]!=null
+        {           
+            
+            Staff[] instructor = Staff.getInstructors(list[i].courseID);
+            if(instructor.length == 0)  instructorName = "No Instructor";
+            else    instructorName = instructor[0].firstName+" "+instructor[0].lastName;
             AddRowToJTable(new Object[]{
-                                           list[i].courseID,list[i].name,Staff.getInstructors(list[i].courseID)[0].firstName+" "+Staff.getInstructors(list[i].courseID)[0].lastName,list[i].description
+                                           list[i].courseID,list[i].name,instructorName,list[i].description
                                            },admincourseslistTable);
         }
         }
@@ -7500,6 +7509,7 @@ public class Interface extends javax.swing.JFrame {
         studentprofilenameText.setText(student.firstName+" "+student.lastName);
         studentprofileidText.setText(student.userID); // to be changed later [ ADDED ]
         studentprofilephoneText.setText(student.phone[0]);
+        studentprofilephone2Text.setText(student.phone[1]);
         studentprofilepasswordText.setText(student.password);
         studentprofilegenderText.setText(student.gender);
         studentprofileacadmicyearText.setText(student.academicYear);
@@ -7707,6 +7717,8 @@ public class Interface extends javax.swing.JFrame {
 
     private void adminaddmodifydeleteButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminaddmodifydeleteButtonMousePressed
         SideButton(adminaddmodifydeleteButton,adminaddmodifydeletePanel,adminaddmodifydeleteSideButton);
+        reloadAdminSaveStudent();
+        reloadAdminSaveInstructor();
     }//GEN-LAST:event_adminaddmodifydeleteButtonMousePressed
 
     private void adminsignoutButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsignoutButtonMousePressed
@@ -7756,7 +7768,6 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_admineditprofileButtonMousePressed
 
     private void adminsaveprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsaveprofileButtonMousePressed
-        staff.salary=adminprofilesalaryText.getText();
         staff.password=adminprofilepasswordText.getText();  //Password need to be added
         staff.updateStaff();
         adminprofilepasswordText.setEditable(false);
@@ -7851,7 +7862,7 @@ public class Interface extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "The grade of student ID "+grade.StudentID+" has been set to "+grade.grade,"Success", JOptionPane.INFORMATION_MESSAGE);
         }
-        else JOptionPane.showMessageDialog(this, "Could not modify!","Fail", JOptionPane.ERROR);
+        else JOptionPane.showMessageDialog(this, "Could not modify!","Fail", JOptionPane.ERROR_MESSAGE);
         reloadInstructorStudentsTable();
         instructorgrademodifyPanel.setVisible(false);
         instructorcoursestudentslistPanel.setVisible(true);
@@ -7870,7 +7881,7 @@ public class Interface extends javax.swing.JFrame {
         ,instructoraddactivitylinkText.getText(),staff.userID,staff.courseID);
         activity.setDate(instructoraddactivitydateText.getText());
         if(activity.createActivity()) JOptionPane.showMessageDialog(this,  "Activity has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
-        else JOptionPane.showMessageDialog(this,  "Activity has not been added!","Fail", JOptionPane.ERROR);
+        else JOptionPane.showMessageDialog(this,  "Activity has not been added!","Fail", JOptionPane.ERROR_MESSAGE);
         //String name, String type, String link, String instructorID, String modificationdate, String courseID
     }//GEN-LAST:event_activitysaveButtonMousePressed
 
@@ -7892,14 +7903,14 @@ public class Interface extends javax.swing.JFrame {
         ,name.nextToken(),name.nextToken(),adminaddgenderstudentText.getText(),adminaddpasswordstudentText.getText());
         student.setDate(adminaddbirthdatestudentText.getText());
         student.calc_age();
-        String[] phone = {adminaddphonestudentText.getText(),adminaddphonestudentText.getText()+"1"};
+        String[] phone = {adminaddphonestudentText.getText(),adminaddphone2studentText.getText()};
         student.setPhone(phone);
         if(student.addStudent())
         {
             JOptionPane.showMessageDialog(this, student.userID+" Student has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
             History.historyAdd(staff.userID,student.userID+History.STUDENT_ADDED);
         }
-        else JOptionPane.showMessageDialog(this, student.userID+ " Student has not been added!","Fail", JOptionPane.ERROR);
+        else JOptionPane.showMessageDialog(this, student.userID+ " Student has not been added!","Fail", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_adminsaveStudentButton1MousePressed
 
     private void exitButton16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton16MousePressed
@@ -7921,7 +7932,7 @@ public class Interface extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this,  course.name+" course has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
             History.historyAdd(staff.userID,History.COURSE_ADDED);
-        }else JOptionPane.showMessageDialog(this,  course.name +" course has not been added!","Fail", JOptionPane.ERROR);
+        }else JOptionPane.showMessageDialog(this,  course.name +" course has not been added!","Fail", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_adminsaveCourseButton2MousePressed
 
     private void exitButton18MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton18MousePressed
@@ -7941,16 +7952,19 @@ public class Interface extends javax.swing.JFrame {
             adminmodifypasswordstudentText.setText(student.password);    
             adminmodifyphonestudentPanel.setVisible(true);
             adminmodifyphonestudentText.setText(student.phone[0]); //problem 2
+            adminmodifyphone2studentText.setText(student.phone[1]); 
             adminmodifygenderstudentPanel.setVisible(true);
             adminmodifygenderstudentText.setText(student.gender);
-            adminmodifyagestudentPanel.setVisible(true);
-            adminmodifyagestudentText.setText(student.age);
             adminmodifybirthdatestudentPanel.setVisible(true);
             adminmodifybirthdatestudentText.setText(student.getDate());
             adminmodifyacadmicyearstudentPanel.setVisible(true);
             adminmodifyacadmicyearstudentText.setText(student.academicYear);
             adminmodifyclassnostudentPanel.setVisible(true);
             adminmodifyclassnostudentText.setText(student.classNo);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this,  adminmodifyidstudentText.getText() +" has not been found!","Fail", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_adminmodifyselectstudentButtonMousePressed
 
@@ -7964,9 +7978,9 @@ public class Interface extends javax.swing.JFrame {
             tempStaff.firstName = name.nextToken();
             tempStaff.lastName = name.nextToken();
             tempStaff.password = adminmodifypasswordinstructorText.getText();
-            //tempStaff.phone = adminmodifyphoneinstructorText.getText();   phone problem 1
+            String[] phones = {adminmodifyphoneinstructorText.getText(),adminmodifyphone2instructorText.getText()};
+            tempStaff.phone = phones;   //phone problem 1
             tempStaff.gender = adminmodifygenderinstructorText.getText();
-            tempStaff.age = adminmodifyageinstructorText.getText();
             tempStaff.setDate(adminmodifybirthdateinstructorText.getText()); 
             tempStaff.courseID = adminmodifycoursecodeinstructorText.getText();
             tempStaff.salary = adminmodifysalaryinstructorText.getText();
@@ -7975,22 +7989,26 @@ public class Interface extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,  tempStaff.userID+" instructor has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
                                 History.historyAdd(staff.userID,tempStaff.userID+" "+History.INSTRUCTOR_UPDATED);
             }
-            else JOptionPane.showMessageDialog(this,  tempStaff.userID+" student has not been modified!","Fail", JOptionPane.ERROR);
+            else JOptionPane.showMessageDialog(this,  tempStaff.userID+" student has not been modified!","Fail", JOptionPane.ERROR_MESSAGE);           
+            reloadAdminSaveInstructor();
             
-            adminsaveInstructorButton2.setVisible(false);
+    }//GEN-LAST:event_adminsaveInstructorButton2MousePressed
+    private void reloadAdminSaveInstructor()
+    {
+        adminsaveInstructorButton2.setVisible(false);
             adminmodifyselectinstructorButton.setVisible(true);
             adminmodifyidinstructorText.setEditable(true);
+            adminmodifyidinstructorText.setText("");
             
             adminmodifynameinstructorPanel.setVisible(false);
             adminmodifypasswordinstructorPanel.setVisible(false);
             adminmodifyphoneinstructorPanel.setVisible(false);
+            adminmodifyphone2instructorPanel.setVisible(false);
             adminmodifygenderinstructorPanel.setVisible(false);
-            adminmodifyageinstructorPanel.setVisible(false);
             adminmodifybirthdateinstructorPanel.setVisible(false);
             adminmodifycoursecodeinstructorPanel.setVisible(false);
             adminmodifysalaryinstructorPanel.setVisible(false);
-    }//GEN-LAST:event_adminsaveInstructorButton2MousePressed
-
+    }
     private void exitButton20MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton20MousePressed
         System.exit(0);
     }//GEN-LAST:event_exitButton20MousePressed
@@ -8004,7 +8022,7 @@ public class Interface extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,  course.courseID+" student has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
                                 History.historyAdd(staff.userID,course.courseID+" "+History.COURSE_UPDATED);
             }
-            else JOptionPane.showMessageDialog(this,  course.courseID+" student has not been modified!","Fail", JOptionPane.ERROR);
+            else JOptionPane.showMessageDialog(this,  course.courseID+" student has not been modified!","Fail", JOptionPane.ERROR_MESSAGE);
             
             adminmodifysavecourseButton.setVisible(false);
             adminmodifyselectcourseButton.setVisible(true);
@@ -8016,21 +8034,23 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_adminmodifysavecourseButtonMousePressed
 
     private void admindeletestudentButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admindeletestudentButtonMousePressed
-        if(Student.deleteUser(admindeletestudentText.getText())) 
+        student = new Student(admindeletestudentText.getText());
+        if(student.deleteStudent())
         {
             JOptionPane.showMessageDialog(this,  admindeletestudentText.getText()+" student has been deleted!","Success", JOptionPane.INFORMATION_MESSAGE);
                             History.historyAdd(staff.userID,student.userID+" "+History.STUDENT_DELETED);
         }
-            else JOptionPane.showMessageDialog(this,  admindeletestudentText.getText()+" student has not been delete!","Fail", JOptionPane.ERROR);
+            else JOptionPane.showMessageDialog(this,  admindeletestudentText.getText()+" student has not been delete!","Fail", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_admindeletestudentButtonMousePressed
 
     private void admindeleteinstructorButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admindeleteinstructorButtonMousePressed
-        if(Staff.deleteUser(admindeleteinstructorText.getText())) 
+        tempStaff = new Staff(admindeleteinstructorText.getText());
+        if(tempStaff.deleteInstructort()) 
         {
             JOptionPane.showMessageDialog(this,  admindeleteinstructorText.getText()+" instructor has been deleted!","Success", JOptionPane.INFORMATION_MESSAGE);
                         History.historyAdd(staff.userID,tempStaff.userID+" "+History.INSTRUCTOR_DELETED);
         }
-            else JOptionPane.showMessageDialog(this,  admindeleteinstructorText.getText()+" instructor has not been delete!","Fail", JOptionPane.ERROR);
+            else JOptionPane.showMessageDialog(this,  admindeleteinstructorText.getText()+" instructor has not been delete!","Fail", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_admindeleteinstructorButtonMousePressed
 
     private void admindeletecourseButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admindeletecourseButtonMousePressed
@@ -8039,7 +8059,7 @@ public class Interface extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,  admindeletecourseText.getText()+" course has been deleted!","Success", JOptionPane.INFORMATION_MESSAGE);
                 History.historyAdd(staff.userID,course.courseID+" "+History.COURSE_DELETED);        
         }
-            else JOptionPane.showMessageDialog(this,  admindeletecourseText.getText()+" course has not been delete!","Fail", JOptionPane.ERROR);
+            else JOptionPane.showMessageDialog(this,  admindeletecourseText.getText()+" course has not been delete!","Fail", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_admindeletecourseButtonMousePressed
 
     private void admindeletestudentTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admindeletestudentTextActionPerformed
@@ -8078,20 +8098,23 @@ public class Interface extends javax.swing.JFrame {
     private void studenteditprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studenteditprofileButtonMousePressed
         tempData[0] = studentprofilepasswordText.getText();
         tempData[1] = studentprofilephoneText.getText();
+        tempData[2] = studentprofilephone2Text.getText();
         studenteditprofileButton.setVisible(false);
         studentsaveprofileButton.setVisible(true);
         studentdiscardprofileButton.setVisible(true);
         studentprofilepasswordText.setEditable(true);
         studentprofilephoneText.setEditable(true);
+        studentprofilephone2Text.setEditable(true);
     }//GEN-LAST:event_studenteditprofileButtonMousePressed
 
     private void studentsaveprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentsaveprofileButtonMousePressed
         student.password = studentprofilepasswordText.getText();
-        String[] phones = {studentprofilephoneText.getText(),studentprofilephoneText.getText()};
-        student.setPhone(phones); // phone problem 3
+        String[] phones = {studentprofilephoneText.getText(),studentprofilephone2Text.getText()};
+        student.setPhone(phones);
         student.updateStudent();
         studentprofilepasswordText.setEditable(false);
         studentprofilephoneText.setEditable(false);
+        studentprofilephone2Text.setEditable(false);
         studenteditprofileButton.setVisible(true);
         studentsaveprofileButton.setVisible(false);
         studentdiscardprofileButton.setVisible(false);
@@ -8099,9 +8122,11 @@ public class Interface extends javax.swing.JFrame {
 
     private void studentdiscardprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentdiscardprofileButtonMousePressed
         studentprofilepasswordText.setText(student.password);
-        studentprofilephoneText.setText(student.phone[0]);// phone problem 4
+        studentprofilephoneText.setText(student.phone[0]);
+        studentprofilephone2Text.setText(student.phone[1]);
         studentprofilepasswordText.setEditable(false);
         studentprofilephoneText.setEditable(false);
+        studentprofilephone2Text.setEditable(false);
         studenteditprofileButton.setVisible(true);
         studentsaveprofileButton.setVisible(false);
         studentdiscardprofileButton.setVisible(false);
@@ -8116,10 +8141,10 @@ public class Interface extends javax.swing.JFrame {
         tempStaff = new Staff(adminaddcoursecodeinstructorText.getText(),adminaddsalaryinstructorText.getText(),
                 name.nextToken(),name.nextToken(),adminaddgenderinstructorText.getText(),
                 adminaddpasswordinstructorText.getText());
-        String[] phones = {adminaddphoneinstructorText.getText(),adminaddphoneinstructorText.getText()};
+        String[] phones = {adminaddphoneinstructorText.getText(),adminaddphone2instructorText.getText()};
         tempStaff.setPhone(phones); // phone problem 5
         tempStaff.setDate(adminaddbirthdateinstructorText.getText());
-        if(tempStaff.addStaff())
+        if(tempStaff.addInstructor())
         {
             JOptionPane.showMessageDialog(this, "Instructor has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
             History.historyAdd(staff.userID,History.INSTRUCTOR_ADDED);
@@ -8135,11 +8160,11 @@ public class Interface extends javax.swing.JFrame {
             StringTokenizer name = new StringTokenizer(adminmodifynamestudentText.getText());
             student.firstName = name.nextToken();
             student.lastName = name.nextToken();
-            student.password = adminmodifypasswordstudentText.getText();
-            String[] phones = {adminmodifyphonestudentText.getText(),adminmodifyphonestudentText.getText()};
+            if(!adminmodifypasswordstudentText.getText().contains("")) student.password = adminmodifypasswordstudentText.getText();
+            
+            String[] phones = {adminmodifyphonestudentText.getText(),adminmodifyphone2studentText.getText()};
             student.setPhone(phones); // phone problem 6
             student.gender = adminmodifygenderstudentText.getText();
-            student.age = adminmodifyagestudentText.getText();
             student.setDate(adminmodifybirthdatestudentText.getText());
             student.academicYear = adminmodifyacadmicyearstudentText.getText();
             student.classNo = adminmodifyclassnostudentText.getText();
@@ -8148,23 +8173,27 @@ public class Interface extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,  student.userID+" student has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
                 History.historyAdd(staff.userID,student.userID+" "+History.STUDENT_UPDATED);
             }
-            else JOptionPane.showMessageDialog(this,  student.userID+" student has not been modified!","Fail", JOptionPane.ERROR);
+            else JOptionPane.showMessageDialog(this,  student.userID+" student has not been modified!","Fail", JOptionPane.ERROR_MESSAGE);
             
+            reloadAdminSaveStudent();
+
+    }//GEN-LAST:event_adminsaveStudentButton4MousePressed
+    private void reloadAdminSaveStudent()
+    {
             adminsaveStudentButton4.setVisible(false);
             adminmodifyselectstudentButton.setVisible(true);
             adminmodifyidstudentText.setEditable(true);
+            adminmodifyidstudentText.setText("");
             
             adminmodifynamestudentPanel.setVisible(false);
             adminmodifypasswordstudentPanel.setVisible(false);
             adminmodifyphonestudentPanel.setVisible(false);
+            adminmodifyphone2studentPanel.setVisible(false);
             adminmodifygenderstudentPanel.setVisible(false);
-            adminmodifyagestudentPanel.setVisible(false);
             adminmodifybirthdatestudentPanel.setVisible(false);
             adminmodifyacadmicyearstudentPanel.setVisible(false);
             adminmodifyclassnostudentPanel.setVisible(false);
-
-    }//GEN-LAST:event_adminsaveStudentButton4MousePressed
-
+    }
     private void adminmodifypasswordinstructorTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminmodifypasswordinstructorTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_adminmodifypasswordinstructorTextActionPerformed
@@ -8181,11 +8210,11 @@ public class Interface extends javax.swing.JFrame {
             adminmodifypasswordinstructorPanel.setVisible(true);
             adminmodifypasswordinstructorText.setText(tempStaff.password);    
             adminmodifyphoneinstructorPanel.setVisible(true);
+            adminmodifyphone2instructorPanel.setVisible(true);
             adminmodifyphoneinstructorText.setText(tempStaff.phone[0]); // phone problem 7
+            adminmodifyphone2instructorText.setText(tempStaff.phone[1]); 
             adminmodifygenderinstructorPanel.setVisible(true);
             adminmodifygenderinstructorText.setText(tempStaff.gender);
-            adminmodifyageinstructorPanel.setVisible(true);
-            adminmodifyageinstructorText.setText(tempStaff.age);
             adminmodifybirthdateinstructorPanel.setVisible(true);
             adminmodifybirthdateinstructorText.setText(tempStaff.getDate());
             adminmodifycoursecodeinstructorPanel.setVisible(true);
@@ -8193,6 +8222,7 @@ public class Interface extends javax.swing.JFrame {
             adminmodifysalaryinstructorPanel.setVisible(true);
             adminmodifysalaryinstructorText.setText(tempStaff.salary);
         }
+        else JOptionPane.showMessageDialog(this,  adminmodifyidinstructorText.getText() +" has not been found!","Fail", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_adminmodifyselectinstructorButtonMousePressed
 
     private void adminmodifyidcourseTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminmodifyidcourseTextActionPerformed
@@ -8211,6 +8241,7 @@ public class Interface extends javax.swing.JFrame {
             adminmodifydescribtioncoursePanel.setVisible(true);
             adminmodifydescribtioncourseText.setText(course.description);
         }
+        else JOptionPane.showMessageDialog(this,  adminmodifyidcourseText.getText() +" has not been found!","Fail", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_adminmodifyselectcourseButtonMousePressed
 
     private void exitButton21MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton21MousePressed
@@ -8226,9 +8257,9 @@ public class Interface extends javax.swing.JFrame {
         if(grades.addGrade())
         {
             JOptionPane.showMessageDialog(this,  adminenrollstudentidstudentText.getText()+" student has been added to course "+adminenrollcourseidstudentText.getText()+"!","Success", JOptionPane.INFORMATION_MESSAGE);
-            History.historyAdd(staff.userID,adminenrollstudentidstudentText.getText()+" "+adminenrollstudentidstudentText.getText()+" student has been added to course "+adminenrollcourseidstudentText.getText());
+            History.historyAdd(staff.userID,adminenrollstudentidstudentText.getText()+" student has been added to course "+adminenrollcourseidstudentText.getText());
         }
-        else JOptionPane.showMessageDialog(this,  adminenrollstudentidstudentText.getText()+" student has not been added to course "+adminenrollcourseidstudentText.getText()+"!","Fail", JOptionPane.ERROR);
+        else JOptionPane.showMessageDialog(this,  adminenrollstudentidstudentText.getText()+" student has not been added to course "+adminenrollcourseidstudentText.getText()+"!","Fail", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_adminenrollsavestudentButtonMousePressed
 
     private void instructorprofileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorprofileButtonMousePressed
@@ -8267,7 +8298,7 @@ public class Interface extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,  "Activity of ID "+index+"  has been deleted!","Success", JOptionPane.INFORMATION_MESSAGE);
             reloadInstructorActivityTable();
         }
-        else JOptionPane.showMessageDialog(this, "Activity of ID "+index+"  has not been deleted!","Fail", JOptionPane.ERROR);
+        else JOptionPane.showMessageDialog(this, "Activity of ID "+index+"  has not been deleted!","Fail", JOptionPane.ERROR_MESSAGE);
         
     }//GEN-LAST:event_instructoractivitydeleteButtonMousePressed
 
@@ -8288,7 +8319,7 @@ public class Interface extends javax.swing.JFrame {
         instructorgrademodifyPanel.setVisible(true);
         instructorgrademodifycourseidText.setText(staff.courseID);
         instructorgrademodifystudentidText.setText(instructorcoursestudentslistTable.getValueAt(instructorcoursestudentslistTable.getSelectedRow(), 0).toString());
-        instructorgrademodifygradeText.setText(instructorcoursestudentslistTable.getValueAt(instructorcoursestudentslistTable.getSelectedRow(), 5).toString());
+        instructorgrademodifygradeText.setText(instructorcoursestudentslistTable.getValueAt(instructorcoursestudentslistTable.getSelectedRow(), 6).toString());
     }//GEN-LAST:event_instructorcoursestudentslistTableMousePressed
 
     private void exitButton24MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton24MousePressed
@@ -8450,12 +8481,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel adminaddacadmicyearstudentLabel;
     private javax.swing.JPanel adminaddacadmicyearstudentPanel;
     private javax.swing.JTextField adminaddacadmicyearstudentText;
-    private javax.swing.JLabel adminaddageestudentLabel;
-    private javax.swing.JLabel adminaddageinstructorLabel;
-    private javax.swing.JPanel adminaddageinstructorPanel;
-    private javax.swing.JTextField adminaddageinstructorText;
-    private javax.swing.JPanel adminaddagestudentPanel;
-    private javax.swing.JTextField adminaddagestudentText;
     private javax.swing.JLabel adminaddbirthdateinstructorLabel;
     private javax.swing.JPanel adminaddbirthdateinstructorPanel;
     private javax.swing.JTextField adminaddbirthdateinstructorText;
@@ -8499,6 +8524,12 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JPanel adminaddpasswordinstructorPanel;
     private javax.swing.JTextField adminaddpasswordinstructorText;
     private javax.swing.JTextField adminaddpasswordstudentText;
+    private javax.swing.JLabel adminaddphone2instructorLabel;
+    private javax.swing.JPanel adminaddphone2instructorPanel;
+    private javax.swing.JTextField adminaddphone2instructorText;
+    private javax.swing.JLabel adminaddphone2studentLabel;
+    private javax.swing.JPanel adminaddphone2studentPanel;
+    private javax.swing.JTextField adminaddphone2studentText;
     private javax.swing.JLabel adminaddphoneinstructorLabel;
     private javax.swing.JPanel adminaddphoneinstructorPanel;
     private javax.swing.JTextField adminaddphoneinstructorText;
@@ -8559,12 +8590,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel adminmodifyacadmicyearstudentLabel;
     private javax.swing.JPanel adminmodifyacadmicyearstudentPanel;
     private javax.swing.JTextField adminmodifyacadmicyearstudentText;
-    private javax.swing.JLabel adminmodifyageinstructorLabel;
-    private javax.swing.JPanel adminmodifyageinstructorPanel;
-    private javax.swing.JTextField adminmodifyageinstructorText;
-    private javax.swing.JLabel adminmodifyagestudentLabel;
-    private javax.swing.JPanel adminmodifyagestudentPanel;
-    private javax.swing.JTextField adminmodifyagestudentText;
     private javax.swing.JLabel adminmodifybirthdateinstructorLabel;
     private javax.swing.JPanel adminmodifybirthdateinstructorPanel;
     private javax.swing.JTextField adminmodifybirthdateinstructorText;
@@ -8610,6 +8635,12 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel adminmodifypasswordstudentLabel;
     private javax.swing.JPanel adminmodifypasswordstudentPanel;
     private javax.swing.JTextField adminmodifypasswordstudentText;
+    private javax.swing.JLabel adminmodifyphone2instructorLabel;
+    private javax.swing.JPanel adminmodifyphone2instructorPanel;
+    private javax.swing.JTextField adminmodifyphone2instructorText;
+    private javax.swing.JLabel adminmodifyphone2studentLabel;
+    private javax.swing.JPanel adminmodifyphone2studentPanel;
+    private javax.swing.JTextField adminmodifyphone2studentText;
     private javax.swing.JLabel adminmodifyphoneinstructorLabel;
     private javax.swing.JPanel adminmodifyphoneinstructorPanel;
     private javax.swing.JTextField adminmodifyphoneinstructorText;
@@ -8640,9 +8671,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel adminprofilepasswordLabel;
     private javax.swing.JPanel adminprofilepasswordPanel;
     private javax.swing.JTextField adminprofilepasswordText;
-    private javax.swing.JLabel adminprofilesalaryLabel;
-    private javax.swing.JPanel adminprofilesalaryPanel;
-    private javax.swing.JTextField adminprofilesalaryText;
     private javax.swing.JPanel adminsaveCourseButton2;
     private javax.swing.JLabel adminsaveCourseButtonText2;
     private javax.swing.JLabel adminsaveCourseButtonText3;
@@ -8718,9 +8746,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel exitButton7;
     private javax.swing.JLabel exitButton8;
     private javax.swing.JLabel exitButton9;
-    private javax.swing.JComboBox<String> firstplayerChoice;
-    private javax.swing.JComboBox<String> firstplayerChoice1;
-    private javax.swing.JComboBox<String> firstplayerChoice2;
     private javax.swing.JPanel homeButton;
     private javax.swing.JLabel homeButtonLabel;
     private javax.swing.JPanel homePanel;
@@ -8891,6 +8916,9 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel studentprofilepasswordLabel;
     private javax.swing.JPanel studentprofilepasswordPanel;
     private javax.swing.JTextField studentprofilepasswordText;
+    private javax.swing.JLabel studentprofilephone2Label;
+    private javax.swing.JPanel studentprofilephone2Panel;
+    private javax.swing.JTextField studentprofilephone2Text;
     private javax.swing.JLabel studentprofilephoneLabel;
     private javax.swing.JPanel studentprofilephonePanel;
     private javax.swing.JTextField studentprofilephoneText;

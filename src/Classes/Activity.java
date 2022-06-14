@@ -86,14 +86,12 @@ public class Activity {
         return DB.getActivitiesUsingCourseID(courseID);
     }
     public String getDate() {
-        DateFormat dateFormat = new SimpleDateFormat("DD/MM/YYYY");
-        String strDate = dateFormat.format(this.date);
-        return strDate;
+        return new SimpleDateFormat("dd/MM/yyyy").format(this.date);
     }
 
     public void setDate(String sDate1){
         try {
-            this.date = new java.sql.Date((new SimpleDateFormat("DD/MM/YYYY").parse(sDate1)).getTime());
+            this.date = new java.sql.Date((new SimpleDateFormat("dd/MM/yyyy").parse(sDate1)).getTime());
         } catch (ParseException ex) {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -12,21 +12,20 @@ public class History {
     public String adminID, description;
     public Date modificationdate;
     private static final DBInterface DB = new DBInterface();
-    //public static final String Activity_ADDED = "Student Has Been Added to the data base";
-    public static final String STUDENT_ADDED      = "a  Student    has Been added to the database";
-    public static final String INSTRUCTOR_ADDED   = "an instructor Has been added to the database";
-    public static final String ADMIN_ADDED        = "an admin      Has Been added to the database";
-    public static final String COURSE_ADDED       = "a  course     Has Been added to the database";
-    
-    public static final String STUDENT_UPDATED    = "a  student    Has Been updated to the database";
-    public static final String INSTRUCTOR_UPDATED = "an instructor Has Been Updated to the database";
-    public static final String ADMIN_UPDATED      = "an admin      Has Been updated to the database";
-    public static final String COURSE_UPDATED     = "a  course     Has Been updated to the database";
-    
-    public static final String STUDENT_DELETED    = "a  student    Has Been deleted to the database";
-    public static final String INSTRUCTOR_DELETED = "an instructor Has Been deleted to the database";
-    public static final String ADMIN_DELETED      = "an admin      Has Been deleted to the database";
-    public static final String COURSE_DELETED     = "a  course     Has Been deleted to the database";
+    public static final String STUDENT_ADDED      = " is added to student Table";
+    public static final String INSTRUCTOR_ADDED   = " is added to instructor Table";
+    public static final String ADMIN_ADDED        = " is added to admin Table";
+    public static final String COURSE_ADDED       = " is added to course Table";
+
+    public static final String STUDENT_UPDATED    = " is Updated in student Table";
+    public static final String INSTRUCTOR_UPDATED = " is Updated in instructor Table";
+    public static final String ADMIN_UPDATED      = " is Updated in admin Table";
+    public static final String COURSE_UPDATED     = " is Updated in course Table";
+
+    public static final String STUDENT_DELETED    = " is Deleted from student Table";
+    public static final String INSTRUCTOR_DELETED = " is Deleted from instructor Table";
+    public static final String ADMIN_DELETED      = " is Deleted from admin Table";
+    public static final String COURSE_DELETED     = " is Deleted from course Table";
     
 
     public History(String AdminID) {
@@ -55,8 +54,6 @@ public class History {
         return DB.getAdminHistory();
     }
     public String getDate() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
-        String strDate = dateFormat.format(this.modificationdate);
-        return strDate;
+        return (new SimpleDateFormat("dd/MM/yyyy")).format(this.modificationdate);
     }
 }

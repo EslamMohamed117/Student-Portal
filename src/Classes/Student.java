@@ -66,7 +66,9 @@ public class Student extends User {
     public static Student[] getStudents(){
         return DB.getStudents();
     }
-    
+    public boolean deleteStudent(){
+        return DB.deleteStudent(this.userID);
+    }
     
 
     //Search for Instructor ID.

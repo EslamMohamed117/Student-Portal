@@ -60,29 +60,27 @@ public class User {
         return DB.checkUserCredentials(userID, password);
     }
     
-    public static boolean deleteUser(String userID){
-        return DB.deleteUser(userID);
-    }
-    
     public void setPhone(String[] phones) {
         this.phone=phones;
     }
     
     public String getDate() {
-        DateFormat dateFormat = new SimpleDateFormat("DD/MM/YYYY");  
-        String strDate = dateFormat.format(this.birthDate);
-        return strDate;
+        return (new SimpleDateFormat("dd/MM/yyyy")).format(this.birthDate);
     }
-    
-    public void calc_age(){
-        this.age = String.valueOf( LocalDate.now().getYear() - birthDate.getYear() );
-    }
+
     public void setDate(String sDate1){
         try {
-            this.birthDate = new java.sql.Date((new SimpleDateFormat("DD/MM/YYYY").parse(sDate1)).getTime());
-            System.out.println("Year: "+this.birthDate.getYear());
+            this.birthDate = new java.sql.Date((new SimpleDateFormat("dd/MM/yyyy").parse(sDate1)).getTime());
         } catch (ParseException ex) {
             Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    public void calc_age(){
+        LocalDate curr = LocalDate.now();
+        int yeardiff = curr.getYear() - birthDate.getYear() - 1900;
+        if (curr.getMonthValue()< birthDate.getMonth() ||
+           (curr.getMonthValue()== birthDate.getMonth() && curr.getDayOfMonth() < birthDate.getDate()))
+            yeardiff--;
+        this.age = String.valueOf(yeardiff);
     }
 }
