@@ -12,3 +12,9 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\Sarah\Desktop\database\Student-Portal\src\SWproject
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jun 11 13:11:15 EET 2022: Shutting down Derby engine
+----------------------------------------------------------------
+Sat Jun 11 13:11:15 EET 2022:
+Shutting down instance a816c00e-0181-525f-531a-0000162ce9d6 on database directory C:\Users\Sarah\Desktop\database\Student-Portal\src\SWproject\SWproject with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
+----------------------------------------------------------------
