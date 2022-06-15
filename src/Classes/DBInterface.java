@@ -232,6 +232,7 @@ public class DBInterface {
     public boolean checkUserCredentials(String userID, String password) {
         selectTable(USERS_TABLE);
         try {
+
             pstmt = con.prepareStatement(sql + " WHERE USERID = ? and PASSWORD = ?");
             pstmt.setInt(1,Integer.parseInt( userID));
             pstmt.setString(2, password);
@@ -240,6 +241,9 @@ public class DBInterface {
         } 
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        catch (Exception e){
             return false;
         }
     }
