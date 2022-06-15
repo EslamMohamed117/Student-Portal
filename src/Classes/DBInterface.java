@@ -5,6 +5,7 @@
  */
 package Classes;
 
+import java.nio.charset.Charset;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -12,9 +13,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.Instant;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.time.LocalDate;
+import org.apache.derby.shared.common.error.DerbySQLIntegrityConstraintViolationException;
 /**
  *
  * @author raya
@@ -132,9 +135,6 @@ public class DBInterface {
             case ACTIVITY_TABLE:
                 sql = "UPDATE Activity SET Name = ?, Type = ?, Link = ?,  activity_date  = ? WHERE ActivityID = ? ";
                 break;
-            case ADMIN_TABLE:
-                sql = "UPDATE Admin SET  WHERE AdminID = ?";
-                break;
             case ADMIN_HISTORY_TABLE:
                 sql = "UPDATE Admin_History SET Description = ?, activity_date = ? WHERE AdminID = ?";
                 break;
@@ -229,7 +229,7 @@ public class DBInterface {
      * @param password
      * @return
      */
-    public boolean checkUserCredentials(String userID, String password) {
+public boolean checkUserCredentials(String userID, String password) {
         selectTable(USERS_TABLE);
         try {
 
@@ -243,10 +243,11 @@ public class DBInterface {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
-        catch (Exception e){
+        catch (NumberFormatException e){
             return false;
+
         }
-    }
+    } 
     /**
      * 
      * @param 
@@ -290,13 +291,12 @@ public class DBInterface {
      */
     public boolean addInstructor(Staff staffMember){
         try {
-            LocalDate date = LocalDate.now();
-            String year = String.valueOf(date.getYear());
+            String year = String.valueOf(LocalDate.now().getYear());
             
             staffMember.userID = IDGenerator(INSTRUCTOR_TABLE);
             if(staffMember.userID==null || !staffMember.userID.startsWith("2" + year))//Contains null or Newest year User
                 staffMember.userID = "2" + year + "0000";
-            
+            System.out.println(staffMember.userID);
             addUser(staffMember);
             InsertIntoTable(INSTRUCTOR_TABLE);
             pstmt= con.prepareStatement(sql);
@@ -388,14 +388,13 @@ public class DBInterface {
         pstmt.setString(5, reverseGender(member.gender)   );
         pstmt.setString(6, member.password );
         pstmt.executeUpdate();
-        
-        for(int i=0; i<2 && member.phone[i]!=null; i++){//Insert phone numbers //Revise this one.
-            InsertIntoTable(PHONE_TABLE);
-            pstmt=con.prepareStatement(sql);//Can these be put before the for loop ?!
-            pstmt.setInt(1,Integer.parseInt(member.userID));
-            pstmt.setInt(2,Integer.parseInt(member.phone[i]));
-            pstmt.executeUpdate();
+        try{
+        addPhone(member.phone[0], member.userID);
+        addPhone(member.phone[1], member.userID);
+        }catch(NullPointerException e){
+            System.out.println("User has less than two Phones");
         }
+        
         
     }
     /**
@@ -403,11 +402,17 @@ public class DBInterface {
      * @param course 
      * @return  
      */
-    
+    public static boolean isPureAscii(String v) {
+    return Charset.forName("US-ASCII").newEncoder().canEncode(v);
+    }
     public boolean addCourse (Course course) {
+        if(course.name.isEmpty() || course.courseID.isEmpty() 
+            || !isPureAscii(course.name) || !isPureAscii(course.courseID))
+                return false;
         try {
             InsertIntoTable(COURSE_TABLE);
             pstmt=con.prepareStatement(sql);
+            
             pstmt.setString(1,course.courseID);
             pstmt.setString(2,course.name);
             pstmt.setString(3,course.description);
@@ -457,14 +462,16 @@ public class DBInterface {
         try{
             pstmt = con.prepareStatement(sql+" StudentID = ?");
             pstmt.setInt(1,Integer.parseInt(userID));
-            pstmt.executeUpdate();
-            return true;
+            return pstmt.executeUpdate() != 0;
         //System.out.println("Data has been deleted!");//not true!!
         }
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
-        }    
+        }
+        catch(Exception e){
+        return false;
+        }
     }
     
     public boolean deleteCourseFromGrade (String courseID){
@@ -472,9 +479,7 @@ public class DBInterface {
         try{
             pstmt = con.prepareStatement(sql + " CourseID = ?");
             pstmt.setString(1, courseID);
-            pstmt.executeUpdate();
-            return true;
-        //System.out.println("Data has been deleted!");//not true!!
+            return pstmt.executeUpdate() != 0;
         }
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -488,9 +493,7 @@ public class DBInterface {
             pstmt = con.prepareStatement(sql + " StudentID = ? AND CourseID = ?");
             pstmt.setInt(1,Integer.parseInt(StudentID));
             pstmt.setString(2, courseID);
-            pstmt.executeUpdate();
-            return true;
-        //System.out.println("Data has been deleted!");//not true!!
+            return pstmt.executeUpdate() != 0;
         }
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -505,28 +508,30 @@ public class DBInterface {
      */
     
     public boolean deleteStudent(String userID){
-        deleteUserFromStudies(userID);//deletes all grades belonging to this student
+        if(deleteUserFromStudies(userID) == false)//deletes all grades belonging to this student
+            return false;
         try {
             deleteFromTable(STUDENT_TABLE);
             pstmt= con.prepareStatement(sql + " STUDENTID= ?");
             pstmt.setInt(1, Integer.parseInt(userID));
-            pstmt.executeUpdate();
-            deleteUser(userID);
-            return true;
+            if(pstmt.executeUpdate()==0)
+                return false;
+            return deleteUser(userID);
         } catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }
     public boolean deleteInstructor(String userID){
-        deleteInstructorFromActivity(userID);//deletes all activities belonging to this instructor
-            deleteFromTable(INSTRUCTOR_TABLE);
+        if(deleteInstructorFromActivity(userID)==false)//deletes all activities belonging to this instructor
+            return false;
+        deleteFromTable(INSTRUCTOR_TABLE);
         try {
             pstmt= con.prepareStatement(sql + " INSTRUCTORID = ?");
             pstmt.setInt(1, Integer.parseInt(userID));
-            pstmt.executeUpdate();
-            deleteUser(userID);
-            return true;
+            if(pstmt.executeUpdate()==0)
+                return false;
+            return deleteUser(userID);
         } catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
@@ -539,9 +544,7 @@ public class DBInterface {
         deleteFromTable(USERS_TABLE);
         pstmt= con.prepareStatement(sql + " USERID= ?");
         pstmt.setInt(1, Integer.parseInt(userID));
-        pstmt.executeUpdate();
-        
-        return true;
+        return pstmt.executeUpdate() != 0;
         }
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -559,9 +562,7 @@ public class DBInterface {
             deleteFromTable(COURSE_TABLE);
             pstmt=con.prepareStatement(sql + " CourseID = ?");
             pstmt.setString(1,courseID);
-            pstmt.executeUpdate();
-            return true;
-            //System.out.println("Data has been deleted!"); //not true!! 
+            return pstmt.executeUpdate() != 0 ;
         } 
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -578,8 +579,8 @@ public class DBInterface {
         try{
             pstmt=con.prepareStatement(sql + " ActivityID = ?");
             pstmt.setInt(1, Integer.parseInt(activityID));
-            pstmt.executeUpdate();
-            return true;
+            return pstmt.executeUpdate() != 0;
+            
         }
         catch(SQLException ex){
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -593,17 +594,19 @@ public class DBInterface {
         try{
             pstmt=con.prepareStatement(sql + " InstructorID = ?");
             pstmt.setInt(1,Integer.parseInt(InstructorID));
-            pstmt.executeUpdate();
-            return true;
+            return pstmt.executeUpdate() != 0;
         }
         catch(SQLException ex){
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
-            
+        }
+        catch(NumberFormatException e){
+            return false;
         }
     }
     
     public boolean updateGrade(Grades g){
+        Double.parseDouble(g.grade);//new
         updateInTable(STUDIES_TABLE);
         try{
             pstmt=con.prepareStatement(sql);
@@ -617,6 +620,9 @@ public class DBInterface {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
+        catch(NumberFormatException e){
+            return false;
+        }
     }
     /**
      * 
@@ -625,7 +631,11 @@ public class DBInterface {
      * 
      */
     public boolean updateStudent( Student std){//
-        try{            
+        try{
+            if( std.birthDate.after(Date.valueOf(LocalDate.now())) || std.birthDate.before(Date.valueOf(LocalDate.of(1900, 1, 1)))
+            || std.firstName.isEmpty() || std.lastName.isEmpty() || std.gender.isEmpty() || std.classNo.isEmpty() || std.academicYear.isEmpty()
+            || !isPureAscii(std.firstName) || !isPureAscii(std.lastName) || !isPureAscii(std.gender))
+                return false;            
             UpdateUser(std); 
             updateInTable(STUDENT_TABLE);
             pstmt=con.prepareStatement(sql);
@@ -647,6 +657,10 @@ public class DBInterface {
      */
     public boolean updateInstructor(Staff stf){
         try{
+            if( stf.birthDate.after(Date.valueOf(LocalDate.now())) || stf.birthDate.before(Date.valueOf(LocalDate.of(1900, 1, 1)))
+            || stf.firstName.isEmpty() || stf.lastName.isEmpty() || stf.gender.isEmpty() || stf.salary.isEmpty()
+            || !isPureAscii(stf.firstName) || !isPureAscii(stf.lastName) || !isPureAscii(stf.gender))
+                return false;
             UpdateUser(stf);
             updateInTable(INSTRUCTOR_TABLE);
             pstmt=con.prepareStatement(sql);
@@ -664,11 +678,11 @@ public class DBInterface {
     
     public boolean updateAdmin(Staff stf){//Changes in GUI will be required.
         try{
+            if( stf.birthDate.after(Date.valueOf(LocalDate.now())) || stf.birthDate.before(Date.valueOf(LocalDate.of(1900, 1, 1)))
+            || stf.firstName.isEmpty() || stf.lastName.isEmpty()
+            || !isPureAscii(stf.firstName) || !isPureAscii(stf.lastName) || !isPureAscii(stf.gender))
+                return false;
             UpdateUser(stf);
-            updateInTable(ADMIN_TABLE);
-            pstmt=con.prepareStatement(sql);
-            pstmt.setInt(1,Integer.parseInt(stf.userID));//Admin ID
-            pstmt.executeUpdate(); 
             return true;
         }
         catch(SQLException ex){
@@ -693,7 +707,13 @@ public class DBInterface {
         pstmt.setInt(6, Integer.parseInt(usr.userID));
         pstmt.executeUpdate(); 
         
-        updatePhone(usr.phone, usr.userID);
+        deletePhone(usr.userID);
+        try{
+        addPhone(usr.phone[0],usr.userID);
+        addPhone(usr.phone[1],usr.userID);
+        }
+        catch(Exception e){}
+                
     }
     private void updatePhone(String newPhone[], String userID) throws SQLException{
         deletePhone(userID);
@@ -702,11 +722,14 @@ public class DBInterface {
     }
     
     private void addPhone(String newPhone, String userID) throws SQLException{
-        InsertIntoTable(PHONE_TABLE);       
-        pstmt=con.prepareStatement(sql);
-        pstmt.setString(2, newPhone);
-        pstmt.setInt(1, Integer.parseInt(userID));
-        pstmt.executeUpdate();
+        if(newPhone != null && !newPhone.isEmpty()){//Don't try to add empty field!
+            InsertIntoTable(PHONE_TABLE);       
+            pstmt=con.prepareStatement(sql);
+            pstmt.setString(2, newPhone);
+            pstmt.setInt(1, Integer.parseInt(userID));
+            System.out.println("YALAHWY");
+            pstmt.executeUpdate();
+        }
     }
     
     private void deletePhone(String userID) throws SQLException{
@@ -715,13 +738,7 @@ public class DBInterface {
         pstmt.setString(1, userID);
         pstmt.executeUpdate();
     }
-    private void deletePhone(String oldPhone, String userID) throws SQLException{
-        deleteFromTable(PHONE_TABLE);
-        pstmt=con.prepareStatement(sql + "Phone = ? AND UserID = ?");
-        pstmt.setString(1, userID);
-        pstmt.executeUpdate();
-    }
-    
+
     public String[] getPhones(String userID){
         String Phones[] = new String[2];
         PreparedStatement pstmt2;
@@ -740,13 +757,16 @@ public class DBInterface {
         }
         return Phones; 
     }
-    public boolean updateCourse( Course c ){
+    public boolean updateCourse( Course course ){
+        if(course.name.isEmpty() || course.courseID.isEmpty() 
+            || !isPureAscii(course.name) || !isPureAscii(course.courseID))
+                return false;
         try{
             updateInTable(COURSE_TABLE);
             pstmt=con.prepareStatement(sql);
-            pstmt.setString(3, c.courseID);
-            pstmt.setString(1, c.name);
-            pstmt.setString(2, c.description);
+            pstmt.setString(3, course.courseID);
+            pstmt.setString(1, course.name);
+            pstmt.setString(2, course.description);
             pstmt.executeUpdate(); 
             return true;
         }
@@ -755,17 +775,20 @@ public class DBInterface {
             return false;
         }
     }
-    public boolean updateActivity(Activity a ){
+    public boolean updateActivity(Activity activity ){
+        if(activity.name.isEmpty() || activity.courseID.isEmpty()  || activity.date.after(java.util.Date.from(Instant.now()))
+            || !isPureAscii(activity.name) || !isPureAscii(activity.link) || !isPureAscii(activity.type))
+                return false;
         try{
             updateInTable(ACTIVITY_TABLE);
             pstmt=con.prepareStatement(sql);
-            pstmt.setInt(1,Integer.parseInt( a.activityID));
-            pstmt.setString(2, a.name);
-            pstmt.setString(3, a.type);
-            pstmt.setString(4, a.link);
-            pstmt.setDate  (5, (Date) a.date);
-            pstmt.setInt(6, Integer.parseInt(a.instructorID));
-            pstmt.setString(7, a.courseID);
+            pstmt.setInt(1,Integer.parseInt( activity.activityID));
+            pstmt.setString(2, activity.name);
+            pstmt.setString(3, activity.type);
+            pstmt.setString(4, activity.link);
+            pstmt.setDate  (5, (Date) activity.date);
+            pstmt.setInt(6, Integer.parseInt(activity.instructorID));
+            pstmt.setString(7, activity.courseID);
             pstmt.executeUpdate(); 
             return true;
         }
@@ -1127,6 +1150,7 @@ public class DBInterface {
     public boolean getStudentInfo(Student s){//Can be used for searching, requires only ID
         try {
             selectTable(STUDENT_TABLE);
+            System.out.println("STUDENT ID : " + s.userID);
             pstmt = con.prepareStatement(sql + " INNER JOIN USERS ON STUDENT.STUDENTID = USERS.USERID WHERE STUDENT.STUDENTID = ?");
             pstmt.setInt(1,Integer.parseInt(s.userID)); 
             rs = pstmt.executeQuery();
@@ -1146,6 +1170,8 @@ public class DBInterface {
 
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
+        }catch(Exception e){
+            return false;
         }
     }
     
@@ -1155,7 +1181,7 @@ public class DBInterface {
             pstmt = con.prepareStatement(sql + " INNER JOIN USERS ON INSTRUCTOR.INSTRUCTORID = USERS.USERID WHERE INSTRUCTOR.INSTRUCTORID = ?");
             pstmt.setInt(1,Integer.parseInt(stf.userID)); 
             rs = pstmt.executeQuery();
-            rs.next();
+            System.out.println("result set is : " + rs.next());
             stf.firstName   = rs.getString("FNAME");
             stf.lastName    = rs.getString("LNAME");
             stf.birthDate   = rs.getDate("DATEOFBIRTH");
@@ -1169,6 +1195,9 @@ public class DBInterface {
         }
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        catch(Exception e){
             return false;
         }
     }
