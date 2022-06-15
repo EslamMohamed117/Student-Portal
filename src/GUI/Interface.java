@@ -7958,6 +7958,7 @@ public class Interface extends javax.swing.JFrame {
             adminmodifypasswordstudentPanel.setVisible(true);
             adminmodifypasswordstudentText.setText(student.password);    
             adminmodifyphonestudentPanel.setVisible(true);
+            adminmodifyphone2studentPanel.setVisible(true);
             adminmodifyphonestudentText.setText(student.phone[0]); //problem 2
             adminmodifyphone2studentText.setText(student.phone[1]); 
             adminmodifygenderstudentPanel.setVisible(true);
