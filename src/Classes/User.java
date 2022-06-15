@@ -68,14 +68,10 @@ public class User {
         return (new SimpleDateFormat("dd/MM/yyyy")).format(this.birthDate);
     }
 
-    public void setDate(String sDate1){
-        try {
+    public void setDate(String sDate1) throws Exception{
             this.birthDate = new java.sql.Date((new SimpleDateFormat("dd/MM/yyyy").parse(sDate1)).getTime());
-        } catch (ParseException ex) {
-            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
-    public void calc_age(){
+    public void calc_age() throws Exception{
         LocalDate curr = LocalDate.now();
         int yeardiff = curr.getYear() - birthDate.getYear() - 1900;
         if (curr.getMonthValue()< birthDate.getMonth() ||

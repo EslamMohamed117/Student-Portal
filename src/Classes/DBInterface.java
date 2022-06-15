@@ -508,8 +508,7 @@ public boolean checkUserCredentials(String userID, String password) {
      */
     
     public boolean deleteStudent(String userID){
-        if(deleteUserFromStudies(userID) == false)//deletes all grades belonging to this student
-            return false;
+        deleteUserFromStudies(userID);//deletes all grades belonging to this student
         try {
             deleteFromTable(STUDENT_TABLE);
             pstmt= con.prepareStatement(sql + " STUDENTID= ?");
@@ -523,8 +522,7 @@ public boolean checkUserCredentials(String userID, String password) {
         }
     }
     public boolean deleteInstructor(String userID){
-        if(deleteInstructorFromActivity(userID)==false)//deletes all activities belonging to this instructor
-            return false;
+        deleteInstructorFromActivity(userID);
         deleteFromTable(INSTRUCTOR_TABLE);
         try {
             pstmt= con.prepareStatement(sql + " INSTRUCTORID = ?");
@@ -632,7 +630,7 @@ public boolean checkUserCredentials(String userID, String password) {
      */
     public boolean updateStudent( Student std){//
         try{
-            if( std.birthDate.after(Date.valueOf(LocalDate.now())) || std.birthDate.before(Date.valueOf(LocalDate.of(1900, 1, 1)))
+            if( std.birthDate.after(Date.valueOf(LocalDate.now())) || std.birthDate.before(Date.valueOf(LocalDate.of(1920, 1, 1)))
             || std.firstName.isEmpty() || std.lastName.isEmpty() || std.gender.isEmpty() || std.classNo.isEmpty() || std.academicYear.isEmpty()
             || !isPureAscii(std.firstName) || !isPureAscii(std.lastName) || !isPureAscii(std.gender))
                 return false;            
@@ -649,6 +647,9 @@ public boolean checkUserCredentials(String userID, String password) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
+        catch(Exception e){
+            return false;
+        }
     }
     /**
      * 
@@ -657,7 +658,7 @@ public boolean checkUserCredentials(String userID, String password) {
      */
     public boolean updateInstructor(Staff stf){
         try{
-            if( stf.birthDate.after(Date.valueOf(LocalDate.now())) || stf.birthDate.before(Date.valueOf(LocalDate.of(1900, 1, 1)))
+            if( stf.birthDate.after(Date.valueOf(LocalDate.now())) || stf.birthDate.before(Date.valueOf(LocalDate.of(1920, 1, 1)))
             || stf.firstName.isEmpty() || stf.lastName.isEmpty() || stf.gender.isEmpty() || stf.salary.isEmpty()
             || !isPureAscii(stf.firstName) || !isPureAscii(stf.lastName) || !isPureAscii(stf.gender))
                 return false;
@@ -674,11 +675,14 @@ public boolean checkUserCredentials(String userID, String password) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
+        catch(Exception e){
+            return false;
+        }
     }
     
     public boolean updateAdmin(Staff stf){//Changes in GUI will be required.
         try{
-            if( stf.birthDate.after(Date.valueOf(LocalDate.now())) || stf.birthDate.before(Date.valueOf(LocalDate.of(1900, 1, 1)))
+            if( stf.birthDate.after(Date.valueOf(LocalDate.now())) || stf.birthDate.before(Date.valueOf(LocalDate.of(1920, 1, 1)))
             || stf.firstName.isEmpty() || stf.lastName.isEmpty()
             || !isPureAscii(stf.firstName) || !isPureAscii(stf.lastName) || !isPureAscii(stf.gender))
                 return false;
@@ -687,6 +691,10 @@ public boolean checkUserCredentials(String userID, String password) {
         }
         catch(SQLException ex){
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        catch(Exception e)
+        {
             return false;
         }
     }
@@ -977,6 +985,7 @@ public boolean checkUserCredentials(String userID, String password) {
         catch (SQLException ex) {//Course Wasn't Found in Courses DataBase
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
+        catch(Exception e){}
         return s;
     }
     
@@ -1025,6 +1034,7 @@ public boolean checkUserCredentials(String userID, String password) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             
         }
+        catch(Exception e){}
         return s;
     }   
     //Afifi will change this.
@@ -1059,6 +1069,7 @@ public boolean checkUserCredentials(String userID, String password) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             
         }
+        catch(Exception e){}
         return inst;
     }
     
@@ -1083,6 +1094,7 @@ public boolean checkUserCredentials(String userID, String password) {
         catch (SQLException ex) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
+        catch(Exception e){}
         return admins;
     }
     
@@ -1221,6 +1233,7 @@ public boolean checkUserCredentials(String userID, String password) {
             Logger.getLogger(DBInterface.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
+        catch(Exception e){return false;}
     }
     private String[] getCoursesID(String UserID) {
         String []str = null;

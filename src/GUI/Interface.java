@@ -7880,12 +7880,16 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_instructoraddactivitytypeTextActionPerformed
 
     private void activitysaveButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_activitysaveButtonMousePressed
+        try{
         Activity activity = new Activity(instructoraddactivitytextText.getText(),instructoraddactivitytypeText.getText()
         ,instructoraddactivitylinkText.getText(),staff.userID,staff.courseID);
+        
         activity.setDate(instructoraddactivitydateText.getText());
+            
         if(activity.createActivity()) JOptionPane.showMessageDialog(this,  "Activity has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
-        else JOptionPane.showMessageDialog(this,  "Activity has not been added!","Fail", JOptionPane.ERROR_MESSAGE);
-        //String name, String type, String link, String instructorID, String modificationdate, String courseID
+        else throw new Exception();
+        }
+        catch(Exception e){JOptionPane.showMessageDialog(this,  "Activity has not been added!","Fail", JOptionPane.ERROR_MESSAGE);}
     }//GEN-LAST:event_activitysaveButtonMousePressed
 
     private void instructoraddactivitytextTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructoraddactivitytextTextActionPerformed
@@ -7914,7 +7918,7 @@ public class Interface extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, student.userID+" Student has been added!","Success", JOptionPane.INFORMATION_MESSAGE);
             History.historyAdd(staff.userID,student.userID+History.STUDENT_ADDED);
         }
-        else JOptionPane.showMessageDialog(this, student.userID+ " Student has not been added!","Fail", JOptionPane.ERROR_MESSAGE);
+        else throw new Exception();
         }catch ( Exception e){
             JOptionPane.showMessageDialog(this, "Student has NOT been added!","Fail", JOptionPane.ERROR_MESSAGE);
         }
@@ -7981,7 +7985,8 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_exitButton19MousePressed
 
     private void adminsaveInstructorButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsaveInstructorButton2MousePressed
-            
+            try
+            {
             StringTokenizer name = new StringTokenizer(adminmodifynameinstructorText.getText());
             tempStaff.firstName = name.nextToken();
             tempStaff.lastName = name.nextToken();
@@ -7997,9 +8002,17 @@ public class Interface extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,  tempStaff.userID+" instructor has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
                                 History.historyAdd(staff.userID,tempStaff.userID+" "+History.INSTRUCTOR_UPDATED);
             }
-            else JOptionPane.showMessageDialog(this,  tempStaff.userID+" instructor has not been modified!","Fail", JOptionPane.ERROR_MESSAGE);           
-            reloadAdminSaveInstructor();
-            
+            else throw new Exception();
+
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(this,  tempStaff.userID+" instructor has not been modified!","Fail", JOptionPane.ERROR_MESSAGE);           
+            }
+            finally
+            {
+                reloadAdminSaveInstructor();
+            }
     }//GEN-LAST:event_adminsaveInstructorButton2MousePressed
     private void reloadAdminSaveInstructor()
     {
@@ -8173,7 +8186,8 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_adminmodifypasswordstudentTextActionPerformed
 
     private void adminsaveStudentButton4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsaveStudentButton4MousePressed
-            
+            try
+            {
             StringTokenizer name = new StringTokenizer(adminmodifynamestudentText.getText());
             student.firstName = name.nextToken();
             student.lastName = name.nextToken();
@@ -8190,10 +8204,16 @@ public class Interface extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,  student.userID+" student has been modified!","Success", JOptionPane.INFORMATION_MESSAGE);
                 History.historyAdd(staff.userID,student.userID+" "+History.STUDENT_UPDATED);
             }
-            else JOptionPane.showMessageDialog(this,  student.userID+" student has not been modified!","Fail", JOptionPane.ERROR_MESSAGE);
+            else throw new Exception(); 
             
-            reloadAdminSaveStudent();
-
+                }
+            catch(Exception e)
+            {
+                    JOptionPane.showMessageDialog(this,  student.userID+" student has not been modified!","Fail", JOptionPane.ERROR_MESSAGE);
+                    }
+            finally{
+                reloadAdminSaveStudent();
+            }
     }//GEN-LAST:event_adminsaveStudentButton4MousePressed
     private void reloadAdminSaveStudent()
     {
